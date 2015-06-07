@@ -296,7 +296,7 @@ Let's create `creatures#create` method
 		...
 			def create
 				new_creature = params.require(:creature).permit(:name, :description)
-				creature.create(new_creature)
+				Creature.create(new_creature)
 				redirect_to "/creatures"
 			end
 		
@@ -325,7 +325,7 @@ Let's update our `creatures#new` method
 
 This sets `@creature` to a new instance of a `Creature` which we can now share with or `new.html.erb` and thus our `form_helper`
 	
-`app/views/creatures/index.html.erb`
+`app/views/creatures/new.html.erb`
 	
 	<%= form_for @creature do |f| %>
 		
@@ -403,7 +403,7 @@ The `#create` method redirects to `#index` (the `/creaures` path), but this isn'
 		...
 			def create
 				new_creature = params.require(:creature).permit(:name, :description)
-				creature = creature.create(new_creature)
+				creature = Creature.create(new_creature)
 				redirect_to "/creatures/#{creature.id}"
 			end
 		
@@ -492,7 +492,7 @@ Going to [creatures/1/edit](localhost:3000/creatures/1/edit) we get the followin
 	
 	undefined method `creature_path' for #<#<Class:0x007fc5fc41be68>:0x007fc5fc40ea38>
 
-This is because when we rake routes we notice that there is no `prefix` for the `creature` which rails uses to internal generate methods for you.
+This is because when we `rake routes` we notice that there is no `prefix` for the `creature` which rails uses internally to generate methods for you.
 
 `/config/routes.rb`
 
