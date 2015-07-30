@@ -643,3 +643,4 @@ Let's add a delete button to another view.
       <p> <%= creature.description %></p>
       <%= button_to "Delete", creature, method: :delete %>
 	<% end %>
+# bog_app
