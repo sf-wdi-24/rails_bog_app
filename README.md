@@ -114,7 +114,7 @@ Using the above routing pattern we'll write our first
 		RouteApp::Application.routes.draw do
 			root to: 'creautres#index'
 			## Also just to keep it RESTful
-			get '/creatures', to: "creatures#index"
+			resources :creatures, only: [:index]
 		end
 
 ### 5. Creatures Controller and Index Method
@@ -197,10 +197,7 @@ The *RESTful* convention would be to make a form available at `/creatures/new`. 
 
 	Rails.application.routes.draw do
 		root to: 'creatures#index'
-
-		# just to be RESTful
-		get '/creatures', to: 'creatures#index'
-		get '/creatures/new', to: 'creatures#new'
+		resources :creatures, only: [:index, :show]
 
 	end
 
@@ -252,11 +249,7 @@ and so we add it to our
 
 	Rails.application.routes.draw do
 		root to: 'creatures#index'
-
-		# just to be RESTful
-		get '/creatures', to: 'creatures#index'
-		get '/creatures/new', to: 'creatures#new'
-		post "/creatures", to: "creatures#create"
+		resource :creatures, only: [:index, :new, :create]
 	end
 
 ### 13. A Create Method
@@ -322,13 +315,7 @@ Let's add our `show` route.
 
 	Rails.application.routes.draw do
 		root to: 'creatures#index'
-
-		# just to be RESTful
-		get '/creatures', to: 'creatures#index'
-		get '/creatures/new', to: 'creatures#new'
-		# rake routes to check this route out
-		get '/creatures/:id', to: 'creatures#show'
-		post "/creatures", to: "creatures#create"
+		resources :creatures, only: [:index, :new, :create, :show]
 	end
 
 
@@ -418,17 +405,7 @@ We begin with handling the request from a client for an edit page.
 
 		Rails.application.routes.draw do
 			root to: 'creatures#index'
-
-
-			get '/creatures', to: 'creatures#index'
-
-			get '/creatures/new', to: 'creatures#new'
-
-			get '/creatures/:id', to: 'creatures#show'
-
-			get '/creatures/:id/edit', to: 'creatures#show'
-
-			post "/creatures", to: "creatures#create"
+			resources :creatures, only: [:index, :new, :create, :show, :create]
 		end
 
 
@@ -475,16 +452,7 @@ This is because when we `rake routes` we notice that there is no `prefix` for th
 	Rails.application.routes.draw do
 		root to: 'creatures#index'
 
-		# Add prefixes to routes using `as: "some_prefix"` syntax
-		get '/creatures', to: 'creatures#index', as: "creatures"
-
-		get '/creatures/new', to: 'creatures#new', as: "new_creature"
-
-		get '/creatures/:id', to: 'creatures#show', as: "creature"
-
-		get '/creatures/:id/edit', to: 'creatures#show', as: "edit_creature"
-
-		post "/creatures", to: "creatures#create"
+		resources :creatures, only: [:index, :new, :create, :show, :create, :edit]
 	end
 
 
@@ -521,20 +489,7 @@ The only difference now is that we will need to use the `id` of the object being
 
 		Rails.application.routes.draw do
 			root to: 'creatures#index'
-
-			# Add prefixes to routes using `as: "some_prefix"` syntax
-			get '/creatures', to: 'creatures#index', as: "creatures"
-
-			get '/creatures/new', to: 'creatures#new', as: "new_creature"
-
-			get '/creatures/:id', to: 'creatures#show', as: "creature"
-
-			get '/creatures/:id/edit', to: 'creatures#show', as: "edit_creature"
-
-			post "/creatures", to: "creatures#create"
-
-			# The update route
-			patch "/creatures/:id", to: "creatures#update"
+			resources :creatures, except: [:destroy]
 		end
 
 	Note the method we now need to create is called `#update`
@@ -570,23 +525,7 @@ Following a similar pattern to the above we create a route for a destroy that us
 
 		Rails.application.routes.draw do
 			root to: 'creatures#index'
-
-			# Add prefixes to routes using `as: "some_prefix"` syntax
-			get '/creatures', to: 'creatures#index', as: "creatures"
-
-			get '/creatures/new', to: 'creatures#new', as: "new_creature"
-
-			get '/creatures/:id', to: 'creatures#show', as: "creature"
-
-			get '/creatures/:id/edit', to: 'creatures#show', as: "edit_creature"
-
-			post "/creatures", to: "creatures#create"
-
-			# The update route
-			patch "/creatures/:id", to: "creatures#update"
-
-			# the destroy route
-			delete "/creatures/:id", to: "creatures#destroy"
+			resources :creatures
 		end
 
 
