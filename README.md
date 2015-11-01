@@ -16,15 +16,15 @@ Researchers are collecting data on a local bog and need app to quickly record fi
 | :--- |
 | A bog is a mire that accumulates peat, a deposit of dead plant material—often mosses. |
 
-I hear bog and think of this...
+I hear bog and think of Yoda and Luke...
 
 ![luke](http://1.bp.blogspot.com/-Aa0TuXoIMoU/T4M7_GbT8uI/AAAAAAAAin8/lcUZkoqoJM4/s1600/Yoda-and-Luke.jpg)
 
-but if you were thinking of peat more...
-
-![bog peat](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Peat-Stack_in_Ness%2C_Outer_Hebrides%2C_Scotland.jpg/2560px-Peat-Stack_in_Ness%2C_Outer_Hebrides%2C_Scotland.jpg)
-![peat](http://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Feu_de_tourbe.JPG/1920px-Feu_de_tourbe.JPG)
-![scotch](http://files.sbe.com/content/uploads/2014/02/scotch.jpg)
+Or maybe Etrayu and The Swamps of Sadness...
+![Bye Bye, Artax!](https://readingotherpeople.files.wordpress.com/2015/06/artax.jpg)  
+ 
+Or maybe Sir Didymus and The Bog of Eternal Stench...
+![Bog of Etneral Stench](http://amazingradio.com/wp-content/uploads/tumblr_mphici3ZJB1rm1bf5o1_500.gif)
 
 
 ## Outline
@@ -558,3 +558,8 @@ Let's add a delete button to another view.
       <p> <%= creature.description %></p>
       <%= button_to "Delete", creature, method: :delete %>
 	<% end %>
+
+
+#CONGRATULATIONS! You have created a Bog App! Take a break, you look *Swamped*!
+
+![Swamp Thing](http://orig11.deviantart.net/4b3a/f/2010/088/e/2/swamp_thing_by_killbabykill.jpg)
