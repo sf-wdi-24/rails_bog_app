@@ -50,14 +50,9 @@ Part III: Review and Refactor
 
 ## CRUD and REST Reference
 
-Typically we associate **CRUD** with the following **HTTP** methods
+Memorize this:
 
-| CRUD Operation | HTTP Method | Example|
-| :---  |	:--- | :-- |
-| Create | POST | `POST "/puppies?name=spot"` (create a puppy named spot) |
-| Read   | GET  | `GET "/puppies"` (Shows all puppies) |
-| Update | PUT or UPDATE | `PUT "/puppies/1?name=lassy"` (change puppy number 1 to have name lassy) |
-| Delete | DELETE | `Delete "/puppies/1"` (destroy the first puppy, yikes!!!!) |
+![Restful Routes](http://i.stack.imgur.com/RyM1b.png)
 
 REST stands for **REpresentational State Transfer**. We will demonstrate these practices throughout this lesson, but for now preparing don't worry too much about it yet.
 
