@@ -20,8 +20,8 @@ I hear bog and think of Yoda and Luke...
 
 ![luke](http://1.bp.blogspot.com/-Aa0TuXoIMoU/T4M7_GbT8uI/AAAAAAAAin8/lcUZkoqoJM4/s1600/Yoda-and-Luke.jpg)
 
-Or maybe Etrayu and The Swamps of Sadness...
-![Bye Bye, Artax!](https://readingotherpeople.files.wordpress.com/2015/06/artax.jpg)  
+<!--Or maybe Etrayu and The Swamps of Sadness...-->
+<!--![Bye Bye, Artax!](https://readingotherpeople.files.wordpress.com/2015/06/artax.jpg)  -->
  
 Or maybe Sir Didymus and The Bog of Eternal Stench...
 ![Bog of Etneral Stench](http://amazingradio.com/wp-content/uploads/tumblr_mphici3ZJB1rm1bf5o1_500.gif)
