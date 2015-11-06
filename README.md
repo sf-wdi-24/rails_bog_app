@@ -19,9 +19,6 @@ Researchers are collecting data on a local bog and need app to quickly record fi
 I hear bog and think of Yoda and Luke...
 
 ![luke](http://1.bp.blogspot.com/-Aa0TuXoIMoU/T4M7_GbT8uI/AAAAAAAAin8/lcUZkoqoJM4/s1600/Yoda-and-Luke.jpg)
-
-<!--Or maybe Etrayu and The Swamps of Sadness...-->
-<!--![Bye Bye, Artax!](https://readingotherpeople.files.wordpress.com/2015/06/artax.jpg)  -->
  
 Or maybe Sir Didymus and The Bog of Eternal Stench...
 ![Bog of Etneral Stench](http://amazingradio.com/wp-content/uploads/tumblr_mphici3ZJB1rm1bf5o1_500.gif)
@@ -74,11 +71,11 @@ REST stands for **REpresentational State Transfer**. We will strictly adhere to 
 
 ### 1. Set up a new Rails project
 
-In the Terminal, run the following commands:
+**Set this project up inside your `2x-homework/USERNAME` directory.**  In the Terminal, from inside that directory, run the following commands:
 
 * `rails new bog_app -T --database=postgresql` to create a new Rails project called `bog_app`, without including tests (`-T`), using the PostgreSQL database
 * `cd bog_app` to move into the new `bog_app` directory
-* `rake db:create` to have Rails set up a database for the new app
+* `rake db:create` to have Rails set up a database for the new app (sanity check: is PostgreSQL running?)
 * `rails s` or `rails server` to start the WEBrick server
 
 Now our app is up and running at [localhost:3000](localhost:3000/).
@@ -140,7 +137,7 @@ Your routes tell your app how to direct *HTTP requests** to a **controller actio
 >
 > * Rails also has a built-in shorthand to create routes: `resources`
 > 
-> In the Terminal, `rake routes` will show that some routes have a path prefix listed.  These routes are associated with path methods Rails creates for us and uses behind the scenes. The format of a path method name is `prefix_path`.  For example, `puppies_path` is the full path method name for `GET /puppies` (the puppies index) because its prefix is `puppies`.  
+> In the Terminal, `rake routes` will show that some routes have a prefix listed.  These routes are associated with route helpers (methods Rails creates for us to generate urls). The format of a route helper name is `prefix_path`.  For example, `puppies_path` is the full route helper name for `GET /puppies` (the puppies index) because its prefix is `puppies`. We often use route helper methods to generate urls for us in forms, links, and controllers.
 
 
 
@@ -245,6 +242,9 @@ If you look at your views, the `views/creatures` folder has already been created
 
 <% end %>
 ```
+
+
+If you haven't yet, make a git commit for your work so far.
 
 ## Part II: Make A Creature with `new` (form) and `create` (database)
 
@@ -450,6 +450,8 @@ class CreaturesController < ApplicationController
 end
 ```
 
+Make another git commit.
+
 
 Part III: Change a Creature with `edit` (form) and `update` (database) 
 
@@ -593,7 +595,7 @@ class CreaturesController < ApplicationController
 end
 ```
 
-* Test your update in the broswer by editing the creature with an `id` of 1 (go to `/creatures/1/edit`).
+Test your update in the broswer by editing the creature with an `id` of 1 (go to `/creatures/1/edit`). Then, make another git commit.
 
 ## Part IV: Delete a Creature with Delete/Destory
 
@@ -668,6 +670,11 @@ end
 
 At this point, you've created all the RESTful routes, implemented controller actions for each route, and made views for index, show, new, and edit. You've also created the model in the database and manually tested that everything works.
 
-#CONGRATULATIONS! You have created a Bog App! Take a break, you look *Swamped*!
+##CONGRATULATIONS! You have created a Bog App! Take a break, you look *Swamped*!
 
 ![Swamp Thing](http://orig11.deviantart.net/4b3a/f/2010/088/e/2/swamp_thing_by_killbabykill.jpg)
+
+
+##Submission
+
+Add and commit your changes locally with git.  Push them up to your homework repo, and make a pull request to the class homework repo!
