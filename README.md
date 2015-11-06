@@ -7,8 +7,7 @@ Researchers are collecting data on a local bog and need app to quickly record fi
 | Objectives |
 | :---- |
 | Review **CRUD** in the context of a Rails application, especially **Updating** and **Deleting** a resource. |
-| Examine **form helpers** and **partials** (if time permits) in a  Rails Application. |
-| Apply styling and **Bootstrap** to our site to create a custom layout. |
+| Examine **form helpers** and **partials** in a  Rails Application. |
 
 If you get stuck or want to see everything together, solutions are in a solutions branch on this repository: https://github.com/sf-wdi-22-23/bog_app/tree/solution.
 
