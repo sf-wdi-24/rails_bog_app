@@ -140,7 +140,7 @@ Your routes tell your app how to direct *HTTP requests** to a **controller actio
 >
 > * Rails also has a built-in shorthand to create routes: `resources`
 > 
-> In the Terminal, `rake routes` will show that some routes have a path prefix listed.  These routes are associated with path methods Rails creates for us and uses behind the scenes. The format of a path method name is `prefix_path` (for example, `creatures_path`).  
+> In the Terminal, `rake routes` will show that some routes have a path prefix listed.  These routes are associated with path methods Rails creates for us and uses behind the scenes. The format of a path method name is `prefix_path`.  For example, `puppies_path` is the full path method name for `GET /puppies` (the puppies index) because its prefix is `puppies`.  
 
 
 
@@ -333,8 +333,7 @@ class CreaturesController < ApplicationController
 		# check that it saved
 		if creature.save
 			# if saved, redirect to route that shows all creatures
-			redirect_to creatures
-			# ^ same as redirect_to creatures_path
+			redirect_to creatures_path
 			# ^ same as redirect_to "/creatures"
 		end
 	end
@@ -558,9 +557,9 @@ Rails.application.routes.draw do
 	root to: 'creatures#index'
 	resources :creatures, only: [:index, :new, :show, :create, :edit, :update]
 	# resources :creatures with :update is equivalent to adding BOTH:
-	patch "/creatures/:id", to: "creatures#update"
+	# patch "/creatures/:id", to: "creatures#update"
 	# AND
-	put "/creatures/:id", to: "creatures#update"
+	# put "/creatures/:id", to: "creatures#update"
 end
 ```
 
