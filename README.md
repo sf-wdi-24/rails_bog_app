@@ -32,18 +32,23 @@ Or maybe Sir Didymus and The Bog of Eternal Stench...
 Part I: Review and Apply Form Helpers
 
 * Drop in Bootstrap
-* Setup a **`/creatures/`** index route and template
+* Setup a **`/creatures/`** index route and view template.
 * Create a **Creature** model.
 	* verify it works in console
-	* iterate over each creature in creatures#index
-* Setup a **`/creatures/new`** and **CREATE**
-	* Use form helpers with a new `Creature`
-* Setup a **`/creatures/:id`** to show a particular `creature`
+	* make your creatures#index controller method send all creature data to the creatures index view
+	* display all creatures by iterating over them in the creatures index view
+* Create a new creature from a form
+	* Set up a ** GET `/creatures/new`** 
+	* Use a creatures#new controller method display a new creature form (with form helpers!)
+	* Set up a **POST `/creatures/create`** route 
+	* Use a creatures#create route to make a new `Creature` and save it to the database
+* Setup a **GET `/creatures/:id`** route, a creatures#show controller method, and view template file to show a single particular `creature`
 
 Part II: Setup Edit, Update, and Delete
 
-* Setup a **`/creatures/:id/edit`** and **UPDATE**
-* Setup a **Delete**
+* Set up a **GET `/creatures/:id/edit`** route and a creatures#edit controller method to display an edit creature form view.
+* Set up a **PUT or PATCH `creatures/:id`** route and a creatures#update controller method to update one creature and save it to the database based on the edit form. 
+* Setup a **DELETE  `/creatures/:id`** route and a creatures#destroy controller method to delete a particular creature from the database.
 
 Part III: Review and Refactor
 ```
@@ -54,7 +59,7 @@ Memorize this:
 
 ![Restful Routes](http://i.stack.imgur.com/RyM1b.png)
 
-REST stands for **REpresentational State Transfer**. We will demonstrate these practices throughout this lesson, but for now preparing don't worry too much about it yet.
+REST stands for **REpresentational State Transfer**. We will strictly adhere to these practices for Rails resources, but Rails will set up a lot of it for us.
 
 ### 1. Setup Rails New
 
@@ -67,7 +72,7 @@ Now our app is up and running, [localhost:3000](localhost:3000/).
 
 ### 2. Drop in Bootstrap
 
-Just put the third party css libraries in `vendor/assets` and for bootstrap just file it under stylesheets.
+In Rails, third party css libraries belong in `vendor/assets`.  For Bootstrap, we'll add its minified css to the `vendor/assets/stylesheets` directory.  Use the following Terminal command to get the bootstrap css (the `curl` part) and save it in a file inside that directory (the part starting with `>`).
 
 ```
  curl https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.2.0.min.css
@@ -76,21 +81,23 @@ Just put the third party css libraries in `vendor/assets` and for bootstrap just
 ### 3. Routes
 
 
-Go to `config/routes.rb` and inside the routes block erase all the commented text. It should now look exactly as follows
+Go to `config/routes.rb`. Inside the routes `draw` block, erase all the commented text. It should now look exactly as follows:
 
-`config/routes.rb`
+```ruby
+#config/routes.rb
 
-	Rails.application.routes.draw do
+Rails.application.routes.draw do
 
-	end
+end
+```
 
-Now we can define all our routes.
+Now we start defining our routes.
 
-Your `routes.rb` will just be telling your app how to connect *HTTP* requests to a **Controller**. Let's get ready for our first route.
+Your `routes.rb` will just be telling your app how to connect *HTTP requests** to a **Controller**. Let's get ready for our first route.
 
 > NOTE
 >
-> * The nature of any route goes as follows:
+> * The syntax for any route goes as follows:
 >
 >		request_type '/for/some/path/goes', to: "controller#method"
 >
@@ -102,458 +109,501 @@ Your `routes.rb` will just be telling your app how to connect *HTTP* requests to
 
 ### 4. Creatures Index Route
 
-Using the above routing pattern we'll write our first
+Using the above routing pattern, we'll write our first route, the `GET /` or "root" route. 
 
-	`/config/routes.rb`
+```ruby
+# /config/routes.rb
 
-		RouteApp::Application.routes.draw do
-			root to: 'creautres#index'
-			## Also just to keep it RESTful
-			resources :creatures, only: [:index]
-		end
+RouteApp::Application.routes.draw do
+	root to: 'creautres#index'
+	
+	# To keep it restful, we'll also have Rails 
+	# make an index route for our creatures resource.
+	# This will be at `GET /creatures`
+	resources :creatures, only: [:index]
+end
+```
 
 ### 5. Creatures Controller and Index Method
 
-Let's begin with the following
+Let's begin by having Rails generate a creatures controller for us. Run the following command in your Terminal (without the $).
 
-	$ rails g controller creatures
+```bash
+$ rails g controller creatures
+```
 
-which is a generator for creating our controller.
+Next, we'll set up our `#index` method in the `creatures` controller.
 
+```ruby
+# app/controllers/creatures_controller.rb
 
-We first need to setup our `#index` method in `creatures`
+class CreaturesController < ApplicationController
 
-`app/controllers/creatures_controller.rb`
-
-	class CreaturesController < ApplicationController
-
-			def index
-				@creatures = Creature.all
-				render :index
-			end
-
-		...
-
+	def index
+		@creatures = Creature.all
+		render :index
 	end
+end
+```
 
 ### 6. Create A Creature
 
+In Terminal, we create our `Creature` model using a rails generator as follows:
 
-In terminal, we create our `Creature` model using a rails generator as follows,
-
-	$ rails g model creature name description
-	$ rake db:migrate
+```bash
+$ rails g model creature name description
+$ rake db:migrate
+```
 
 #### Verify it works
 
-We go straight into terminal to enter *rails console*.
+We go straight into Terminal to enter *rails console*.
 
-	$ rails console
+```bash
+$ rails console
 
-	> Creature.create({name: "Yoda", description: "Green little man"})
+> Creature.create({name: "Yoda", description: "Green little man"})
 	=> #<Creature ....>
+```
 
 *This will avoid issues later with `index` trying to render Creatures that aren't there.*
 
-`db/seeds.rb`
 
-	 Creature.create({name: "Luke", description: "Jedi"})
-	 Creature.create({name: "Darth Vader", description: "Father of Luke"})
+####Seeds
 
+When we create an application in development, we typically will want some mock data to play with. In Rails, we can just drop this into the `db/seeds.rb` file.
 
+Back in your text editor, add some seed data to `db/seeds.rb`.
 
- and then just run `$ rake db:seed` in console. This will now get run every time you `rake db:reset`.
+```ruby
+# db/seeds.rb
 
-#### Seeds
+Creature.create({name: "Luke", description: "Jedi"})
 
-Because when we create an application in development we typically will want some mock data to play with we can just drop this into the `db/seeds.rb` file.
+Creature.create({name: "Darth Vader", description: "Father of Luke"})
+```
+
+Run `$ rake db:seed` in Terminal. Note that the seed file will also get run every time you `rake db:reset` to reset your database.
+
 
 ### 8. Creatures Index View
 
-If you look at your views the `views/creatures` folder has already be created so we just need to add the file below:
+If you look at your views, the `views/creatures` folder has already be created. We just need to add the file below:
 
-`app/views/creatures/index.html.erb`
+```html
+<!-- app/views/creatures/index.html.erb` -->
 
-	<% @creatures.each do |creature| %>
+<% @creatures.each do |creature| %>
 
-		<div>
-			Name: <%= creature.name %> <br>
-			Description: <%=  creature.description %>
-		</div>
+	<div>
+		Name: <%= creature.name %> <br>
+		Description: <%=  creature.description %>
+	</div>
 
-	<% end %>
-
+<% end %>
+```
 
 ### 9. A new route for Creatures
 
-The *RESTful* convention would be to make a form available at `/creatures/new`. Let's add this route.
+The Rails convention is to make a form available at the `/creatures/new` path in our browser. Let's add this route.
 
-`/config/routes.rb`
+```ruby
+#/config/routes.rb
 
-	Rails.application.routes.draw do
-		root to: 'creatures#index'
-		resources :creatures, only: [:index, :show]
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+	resources :creatures, only: [:index, :new]
 
-	end
+end
+```
 
 ### 10.A new method for Creatures
 
-The request for `/Creatures/new` will search for a `Creatures#new`, so we must create a method to handle this request. This will render the `new.html.erb` in the `app/views/Creatures` folder.
+A GET request for `/creatures/new` will search for a `CreaturesController#new` method, so we must create a method to handle this request. Our method will render the `new.html.erb` in the `app/views/creatures` folder.
 
-`app/controllers/creatures_controller.rb`
+```ruby
+# app/controllers/creatures_controller.rb
 
-	class CreaturesController < ApplicationController
+class CreaturesController < ApplicationController
 
-		...
-			def new
-				render :new
-			end
-
-		...
-
+	# ... keep your other content, and add:
+	# show the new creature form
+	def new
+		render :new
 	end
+end
 
 ### 11. A new view for Creatures
 
-Let's create the `app/views/Creatures/new.html.erb` with a form that the user can use to sumbit new Creatures to the application. Note: the action is `/Creatures` because it's the collection we are submiting to, and the method is `post` because we want to create.
+Let's create the `app/views/creatures/new.html.erb` with a form that the user can use to sumbit new Creatures to the application. Note: the url (or action) for the route is `/creatures` because it's the collection we are submiting to, and the method is `POST` because we want to create.
 
-`app/views/creatures/new.html.erb`
+```html
+<!-- app/views/creatures/new.html.erb -->
 
-	<%= form_for :creature, url: "/creatures", method: "post" do |f| %>
+<%= form_for :creature, url: "/creatures", method: "post" do |f| %>
 
-		<%= f.text_field :name %>
-		<%= f.text_area :description %>
-		<%= f.submit "save creature" %>
+	<%= f.text_field :name %>
+	<%= f.text_area :description %>
+	<%= f.submit "save creature" %>
 
-	<% end %>
+<% end %>
+```
 
 ### 12. A Create Route
 
- We have now defined our next `route` in our `new.html.erb` as we are directing all form posts to the following:
+Now let's define the route we just told the new creature form to use when we said `url: "/creatures", method: "post"`.
 
-	post "/creatures", to: "creatures#create"
+```ruby
+#/config/routes.rb
 
-when we said
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+	resource :creatures, only: [:index, :new, :create]
+end
+```
 
-	 url: "/creatures", method: "post"
-
-
-and so we add it to our
-
-`/config/routes.rb`
-
-	Rails.application.routes.draw do
-		root to: 'creatures#index'
-		resource :creatures, only: [:index, :new, :create]
-	end
+Run `rake routes` from the Terminal to see the new route that Rails created for you.
 
 ### 13. A Create Method
 
-Let's create `creatures#create` method
+Let's get this data into the database! We'll need to make a `creatures#create` controller method.
 
-`app/controllers/creatures_controller.rb`
+```ruby
+#app/controllers/creatures_controller.rb
 
-	class CreaturesController < ApplicationController
+class CreaturesController < ApplicationController
 
-		...
-			def create
-				creature_params = params.require(:creature).permit(:name, :description)
-				@creature = Creature.new(creature_params)
-				if @creature.save
-					redirect_to "/creatures"
-				end
-			end
-
-		...
-
+	# keep your other methods, and add:
+	# create a new creature in the database
+	def create
+		# pull out the validated params
+		creature_params = params.require(:creature).permit(:name, :description)
+		# create a new creature
+		@creature = Creature.new(creature_params)
+		# check that it saved
+		if @creature.save
+			# if saved, redirect to route that shows all creatures
+			redirect_to "/creatures"
+		end
 	end
+end
+```
 
 ### 14. A smarter new view for Creatures
 
 
 Let's update our `creatures#new` method
 
-`app/controllers/creatures_controller.rb`
+```ruby
+#app/controllers/creatures_controller.rb
 
-	class CreaturesController < ApplicationController
+class CreaturesController < ApplicationController
 
-		...
-			def new
-				@creature = Creature.new
-				render :new
-			end
-
-		...
-
+	# keep your other methods, and update new:
+	def new
+		@creature = Creature.new
+		render :new
 	end
 
-This sets `@creature` to a new instance of a `Creature` which we can now share with or `new.html.erb` and thus our `form_helper`
+end	
+```	
 
-`app/views/creatures/new.html.erb`
+This sets `@creature` to a new instance of a `Creature`, which we can now share with or view in `views/creatures/new.html.erb`. Let's use it in the form helper.
 
-	<%= form_for @creature do |f| %>
+```html
+<!-- app/views/creatures/new.html.erb -->
 
-		<%= f.text_field :name %>
-		<%= f.text_area :description %>
-		<%= f.submit "save creature" %>
+<%= form_for @creature do |f| %>
 
-	<% end %>
+	<%= f.text_field :name %>
+	<%= f.text_area :description %>
+	<%= f.submit "save creature" %>
 
+<% end %>
+```
 
 ### 15. Show Route
 
-Right now, our app redirects to  `#index` after a create, which isn't helpful for quickly verifying what you just created. To do this we create a `#show`.
+Right now, our app redirects to `/creatures` after a creature is made. This isn't helpful for quickly verifying what you just created. Let's enable a route where users can go to see a specific creature. Then we'll be able to show the newly-created creature by itself on a page.
 
-Let's add our `show` route.
+First, add a `show` route.  
 
-`/config/routes.rb`
+```ruby
+# /config/routes.rb
 
-	Rails.application.routes.draw do
-		root to: 'creatures#index'
-		resources :creatures, only: [:index, :new, :create, :show]
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+
+	resources :creatures, only: [:index, :new, :create, :show]
+end
+```
+
+Now that we have our route, we'll add the controller method it uses.
+
+```ruby
+#app/controllers/creatures_controller.rb
+
+class CreaturesController < ApplicationController
+
+	# keep your other methods, and add:
+	def show
+		id = params[:id]
+		@creature = Creature.find(id)
+		render :show
 	end
 
+end
+```
 
+Now, let's set up the view that will show a single creature.
 
-Our `/creatures/:id` path is below our `/creatures/new` path. If we had `creatures/new` below the show route then the pattern matching will cause an error where all requests for `/creaturess/new` get sent to the show.
+```html
+<!-- app/views/creatures/show.html.erb -->
 
-
-A controller method  
-
-
-`app/controllers/creatures_controller.rb`
-
-	class CreaturesController < ApplicationController
-
-		...
-			def show
-				id = params[:id]
-				@creature = Creature.find(id)
-				render :show
-			end
-
-		...
-
-	end
-
-A view for showing a creature
-
-
-`app/views/creatures/show.html.erb`
-
-		<div>
-			Name: <%= @creature.name %> <br>
-			Description: <%=  @creature.description %>
-		</div>
+<div>
+	Name: <%= @creature.name %> <br>
+	Description: <%=  @creature.description %>
+</div>
+```
 
 
 ### 16.Changing the `#create` redirect
 
-The `#create` method redirects to `#index` (the `/creaures` path), but this isn't very helpful for verrifying that a newly created creature was properly created. The best way to fix this is to have it redirect to `#show`.
+The `creatures#create` method currently redirects to `/creatures`. Again, this isn't very helpful for users who want to verif that a newly created creature was properly created. The best way to fix this is to have it redirect to `/creatures/:id`  instead.
 
+```ruby
+# app/controllers/creatures_controller.rb
 
-`app/controllers/creatures_controller.rb`
+class CreaturesController < ApplicationController
 
-	class CreaturesController < ApplicationController
-
-		...
-			def create
-				creature_params = params.require(:creature).permit(:name, :description)
-				@creature = Creature.new(creature_params)
-				if @creature.save
-					redirect_to "/creatures/#{creature.id}"
-				end
-			end
-
-		...
-
+	# keep your other methods the same, and update create:
+	def create
+		creature_params = params.require(:creature).permit(:name, :description)
+		@creature = Creature.new(creature_params)
+		if @creature.save
+			redirect_to "/creatures/#{creature.id}"
+		end
 	end
+end
+```
 
 
-## Part II: Setup Edit, Update, and Delete
+## Part II: Set Up Edit, Update, and Delete
 
-Editing a Creature model requires two seperate methods. One to display the model information to be edited by the client, and another to handle updates submitted by the client.
+Editing a Creature model requires two seperate methods: one displays a form with the model information to be edited by the client, and another actually updates information in the database when the form is submitted.
 
-If look back at how we handled the getting of our `new` form we see the following pattern.
+If look back at how we handled the getting of our `new` form, we see the following pattern.
 
 * Make a route first
 * Define a controller method
-* render view
+* Render a form view
 
-The only difference is that now we need to use the `id` of the object to be edited. We get the following battle plan.
+The only difference is that now we need to know the `id` of the object to be edited. We get the following battle plan:
 
 * Make a route first
-	* Make sure it specifies the `id` of the thing to be edited
+	* Make sure it specifies the `id` of the record to be edited
 * Define a controller method
-	* Retrieve the `id` of the model to be edited from `params`
-	* use the `id` to find the model
-* render view
-	* use model to display in the form
+	* Retrieve the `id` of the specific record to be edited from `params`
+	* Use ActiveRecord and the `id` to find the record
+* Render a form view
+	* Display the edit form, with the current information form 
 
 ### Getting to an Edit
 
-We begin with handling the request from a client for an edit page.
+We begin with handling the GET request from a client for an edit form.
 
 * We can easily define a **RESTful** route to handle getting the edit page as follows
 
-	`/config/routes.rb`
+```ruby
+#/config/routes.rb
 
-		Rails.application.routes.draw do
-			root to: 'creatures#index'
-			resources :creatures, only: [:index, :new, :create, :show, :create]
-		end
-
-
-* Similarly, using our `#show` method as inspiration we write an `#edit` method
-
-
-	`app/controllers/creatures_controller.rb`
-
-		class CreaturesController < ApplicationController
-
-			...
-				def edit
-					id = params[:id]
-					@creature = Creature.find(id)
-					render :edit
-				end
-
-			...
-
-		end
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+	resources :creatures, only: [:index, :new, :create, :show, :edit]
+end
+```
 
 
-* Let's quickly begin the setup of an `edit` form using our `new.html.erb` from earlier. To see how the form is different we will need to render it and check it out in Chrome console.
+* Similarly, using our `#new` method as inspiration, we write an `#edit` method in our creatures controller.
 
+```ruby
+#app/controllers/creatures_controller.rb`
 
-	`app/views/creatures/new.html.erb`
+class CreaturesController < ApplicationController
 
-		<%= form_for @creature do |f| %>
-
-			<%= f.text_field :name %>
-			<%= f.text_area :description %>
-			<%= f.submit "update creature" %>
-
-		<% end %>
-
-Going to [creatures/1/edit](localhost:3000/creatures/1/edit) we get the following error:
-
-	undefined method `creature_path' for #<#<Class:0x007fc5fc41be68>:0x007fc5fc40ea38>
-
-This is because when we `rake routes` we notice that there is no `prefix` for the `creature` which rails uses internally to generate methods for you.
-
-`/config/routes.rb`
-
-	Rails.application.routes.draw do
-		root to: 'creatures#index'
-
-		resources :creatures, only: [:index, :new, :create, :show, :create, :edit]
+	# keep your other methods, and add:
+	# show an edit form for a specific creature
+	def edit
+		id = params[:id]
+		@creature = Creature.find(id)
+		render :edit
 	end
 
+end
+```
 
 
+* Let's jump start an edit form by copying the form from our `views/creatures/new.html.erb` into `views/creatures/edit.html.erb`. 
 
-That's pretty much the whole-shebang when comes to getting an edit page. Our previous knowledge has really come to help us understand what we need to do. We'll see this also true for the update that still needs to be handled witht the submission of the form above.
+```html
+<!-- app/views/creatures/edit.html.erb -->
+
+<%= form_for @creature do |f| %>
+
+	<%= f.text_field :name %>
+	<%= f.text_area :description %>
+	<%= f.submit "update creature" %>
+
+<% end %>
+```
+
+Go to [creatures/1/edit](localhost:3000/creatures/1/edit) to see what it looks like.
+
+Oh no! When we go visit that part of our site, we get an error that looks like this:
+
+	`undefined method 'creature_path' for #<#<Class:0x007fc5fc41be68>:0x007fc5fc40ea38>`
+
+<!-- @TODO -->
+
+![](https://media.giphy.com/media/m8eIbBdkJK7Go/giphy.gif)
+
+The "paths" in a Rails app are related to routes. In particular `rake routes` (from the Terminal) shows shows that some routes have a path prefix listed.  These routes are associated with path methods Rails creates for us and uses behind the scenes. The format of a path method name is `prefix_path` (for example, `creatures_path`). Notice that there is no prefix of `creature`, which means Rails hasn't created a `creature_path` for us yet. 
+
+```ruby
+#/config/routes.rb
+
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+
+	resources :creatures, only: [:index, :new, :show, :create, :edit]
+end
+```
+
+That's pretty much the whole-shebang when comes to getting an edit page. Our previous knowledge has really come to help us understand what we need to do. We'll see this also true for the update that still needs to be handled when a user submits the form above.
 
 
-### Putting updated form data
+### Updating the Database with Form Data
 
-Looking back at how we handled the submission of our `new` form we see the following pattern.
+Looking back at how we handled the submission of our `new` form, we see that the task of creating an item in the database used the following pattern.
 
-* Make a route first
-* Define a controller method
-* redirect to something
+* Make a route first.
+* Define a controller method.
+* Redirect to some view.
 
-The only difference now is that we will need to use the `id` of the object being update.
+The only difference for updating versus creating is that now we will need to keep track of the `id` of the object being updated.
 
-* Make a route first
+* Make a route first.
 	* Make sure it specifies the `id` of the thing to be **updated**
-* Define a controller method
-	* Retrieve the `id` of the model to be **updated** from `params`
-	* use the `id` to find the model
-	* retrieve the updated info sent from the form in `params`
-	* update the model
+* Define a controller method.
+	* Retrieve the `id` of the record to be **updated** from `params`
+	* Use the `id` to find the record
+	* Retrieve the updated info sent from the form in `params`
+	* Update the record
 * redirect to show
-	* use `id` to redirect to `#show`
+	* Use `id` to redirect to that item's show page
 
 ### Putting it into action
 
 * **Make a route** that uses the `id` of the object to be updated
 
-	`/config/routes.rb`
+```ruby
+#/config/routes.rb
 
-		Rails.application.routes.draw do
-			root to: 'creatures#index'
-			resources :creatures, except: [:destroy]
-		end
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+	resources :creatures, only: [:index, :new, :show, :create, :edit, :update]
+end
+```
+	
+Note the controller method we now need to create is `creatures#update`.
 
-	Note the method we now need to create is called `#update`
-* In the `CreaturesController` we will create the `#update` method mentioned above
+* In the `CreaturesController`, create the `update` method mentioned above.
 
-	`app/controllers/creatures_controller.rb`
+```ruby
+# app/controllers/creatures_controller.rb
 
-		class CreaturesController < ApplicationController
+class CreaturesController < ApplicationController
 
-			...
+	# keep your other methods and add:
+	def update
+		creature_id = params[:id]
+		creature = Creature.find(Creature_id)
 
-			def update
-				creature_id = params[:id]
-				creature = Creature.find(Creature_id)
+		# get updated data
+		updated_attributes = params.require(:creatue).permit(:name, :description)
+		# update the creature
+		creature.update_attributes(updated_attributes)
 
-				# get updated data
-				updated_attributes = params.require(:creatue).permit(:name, :description)
-				# update the creature
-				creature.update_attributes(updated_attributes)
+		#redirect to show
+		# @TODO
+		#redirect_to "/creatures/#{creature_id}"
+		redirect_to creature
+	end
+end
+```
 
-				#redirect to show
-				redirect_to "/creatures/#{creature_id}"
-			end
-
-		end
+* Test your update in the broswer by editing the creature with an id of 1 (go to `/creatures/1/edit`).
 
 ### Destroy
 
+Following a similar pattern to the above, we create a route to destroy (delete) a specific record based on its `id`.
 
-Following a similar pattern to the above we create a route for a destroy that uses the `id` of the model to be deleted.
+```ruby
 
-	`/config/routes.rb`
+#/config/routes.rb
 
-		Rails.application.routes.draw do
-			root to: 'creatures#index'
-			resources :creatures
-		end
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+	resources :creatures, only: [:index, :new, :show, :create, :edit, :update, :destroy]
+end
+```
 
+Next, we create a method for this new route, in the `CreaturesController`.
 
-Next we create a method for it in the `CreaturesController`
+```ruby
+#app/controllers/creatures_controller.rb
 
-`app/controllers/creatures_controller.rb`
+class CreaturesController < ApplicationController
 
-	class CreaturesController < ApplicationController
-
-		...
-
-		def destroy
-			id = params[:id]
-			creature = Creature.find(id)
-			creature.destroy
-			redirect_to "/creatures"
-		end
-
+	# keep your other methods, and add:
+	# delete a specific creature by id
+	def destroy
+		id = params[:id]
+		creature = Creature.find(id)
+		creature.destroy
+		redirect_to "/creatures"
 	end
 
-and if you were tempted to use [`Creature.delete`](http://apidock.com/rails/ActiveRecord/Base/delete/class) that would be fine here because there are no associations. However, we need to use `model.destroy` if we want to avoid issues later.
+end
+```
 
-Let's add a delete button to another view.
+If you were tempted to use [`Creature.delete`](http://apidock.com/rails/ActiveRecord/Base/delete/class) to delete from the database, that would be okay *in this case* because there are no relatonships or associations among resources in this app. However, get in the habit of using `item.destroy` to avoid problems with related resources later.
 
+Let's add a delete button in an existing view.
 
-`app/views/creatures/index.html.erb`
+```html
+<!-- app/views/creatures/index.html.erb -->
 
-	<% @creatures.each do |creature| %>
-      <h2> <%= creature.name %> </h2>
-      <p> <%= creature.description %></p>
-      <%= button_to "Delete", creature, method: :delete %>
-	<% end %>
+<% @creatures.each do |creature| %>
+  <h2> <%= creature.name %> </h2>
+  <p> <%= creature.description %></p>
+  <%= button_to "Delete", creature, method: :delete %>
+<% end %>
+```
 
+Test your delete functionality by visiting `localhost:3000/` and lcicking one of the delete buttons.
+
+At this point, we have used all the RESTful routes for creatures.  Refactor your `config/routes.rb` to use reflect that we're using all of `resources` for creatures (remove the `only:` part).
+
+```ruby
+#/config/routes.rb
+Rails.application.routes.draw do
+	root to: 'creatures#index'
+	resources :creatures
+end
+```
+
+At this point, you've created all the RESTful routes, implemented controller methods for each route, and made views for index, show, new, and edit. You've also created the model in the database and manually tested that everything works.
 
 #CONGRATULATIONS! You have created a Bog App! Take a break, you look *Swamped*!
 
