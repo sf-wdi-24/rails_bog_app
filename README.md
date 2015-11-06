@@ -1,6 +1,6 @@
 # Welcome to the Bog App
 
-Researchers are collecting data on a local bog and need app to quickly record field data. Our goal is to create a **Bog App**.
+Researchers are collecting data on a local bog and need app to quickly record field data. Our goal is to create a **Bog App**.  
 
 ## Intro
 
@@ -9,6 +9,8 @@ Researchers are collecting data on a local bog and need app to quickly record fi
 | Review **CRUD** in the context of a Rails application, especially **Updating** and **Deleting** a resource. |
 | Examine **form helpers** and **partials** (if time permits) in a  Rails Application. |
 | Apply styling and **Bootstrap** to our site to create a custom layout. |
+
+If you get stuck or want to see everything together, solutions are in a solutions branch on this repository: https://github.com/sf-wdi-22-23/bog_app/tree/solution.
 
 ## Background
 
