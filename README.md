@@ -28,30 +28,38 @@ Or maybe Sir Didymus and The Bog of Eternal Stench...
 
 
 ## Outline
-```
-Part I: Review and Apply Form Helpers
+
+
+Part I: Showing Creatures with Index
 
 * Drop in Bootstrap
 * Setup a **`/creatures/`** index route and view template.
 * Create a **Creature** model.
 	* verify it works in console
-	* make your creatures#index controller method send all creature data to the creatures index view
+	* make your creatures#index controller action send all creature data to the creatures index view
 	* display all creatures by iterating over them in the creatures index view
-* Create a new creature from a form
-	* Set up a ** GET `/creatures/new`** 
-	* Use a creatures#new controller method display a new creature form (with form helpers!)
+	
+Part II: Make A Creature with New (form) and Create (database)
+
+* Make a new creature from a form
+	* Set up a ** GET `/creatures/new`** route
+	* Use a `creatures#new` controller action display a new creature form (with form helpers!)
 	* Set up a **POST `/creatures/create`** route 
-	* Use a creatures#create route to make a new `Creature` and save it to the database
-* Setup a **GET `/creatures/:id`** route, a creatures#show controller method, and view template file to show a single particular `creature`
+	* Use a `creatures#create` route to make a new `Creature` and save it to the database
 
-Part II: Setup Edit, Update, and Delete
+* Show a single creature
+	* Set up a **GET `/creatures/:id`** route
+	* Use a `creatures#show` controller action to render a view template for a single `creature`
 
-* Set up a **GET `/creatures/:id/edit`** route and a creatures#edit controller method to display an edit creature form view.
-* Set up a **PUT or PATCH `creatures/:id`** route and a creatures#update controller method to update one creature and save it to the database based on the edit form. 
-* Setup a **DELETE  `/creatures/:id`** route and a creatures#destroy controller method to delete a particular creature from the database.
+Part III: Change a Creature with Edit (form) and Update (database) 
 
-Part III: Review and Refactor
-```
+* Set up a **GET `/creatures/:id/edit`** route and a creatures#edit controller action to display an edit creature form view.
+* Set up a **PUT or PATCH `creatures/:id`** route and a creatures#update controller action to update one creature and save it to the database based on the edit form. 
+
+Part IV: Delete a Creature with Delete/Destory
+* Setup a **DELETE  `/creatures/:id`** route and a creatures#destroy controller action to delete a particular creature from the database.
+* Add a delete button to a view so the user can trigger the delete request.
+
 
 ## CRUD and REST Reference
 
@@ -59,23 +67,48 @@ Memorize this:
 
 ![Restful Routes](http://i.stack.imgur.com/RyM1b.png)
 
-REST stands for **REpresentational State Transfer**. We will strictly adhere to these practices for Rails resources, but Rails will set up a lot of it for us.
+REST stands for **REpresentational State Transfer**. We will strictly adhere to RESTful routing for Rails resources, but Rails will set up a lot of it for us.
 
-### 1. Setup Rails New
+### 1. Set Up a New Rails Project
 
-* `$ rails new bog_app -T`
-* `$ cd bog_app`
-*  NOTE: `rake db:create`
-* `$ rails s`
+In the Terminal, run the following commands:
 
-Now our app is up and running, [localhost:3000](localhost:3000/).
+* `rails new bog_app -T` to create a new Rails project called `bog_app`, without including tests (`-T`)
+* `cd bog_app` to move into the new `bog_app` directory
+* `rake db:create` to have Rails set up a database for the new app
+* `rails s` or `rails server` to start the WEBrick server
+
+Now our app is up and running at [localhost:3000](localhost:3000/).
 
 ### 2. Drop in Bootstrap
 
-In Rails, third party css libraries belong in `vendor/assets`.  For Bootstrap, we'll add its minified css to the `vendor/assets/stylesheets` directory.  Use the following Terminal command to get the bootstrap css (the `curl` part) and save it in a file inside that directory (the part starting with `>`).
+Rails handles JavaScript and CSS with a system called the asset pipeline. We'll go over it more next week, but for now we'll just drop Bootstrap into it. 
+
+For the Asset Pipeline, third party css libraries belong in `vendor/assets`.  For Bootstrap, we'll add its minified css to the `vendor/assets/stylesheets` directory.  Use the following Terminal command to get the bootstrap css (the `curl` part) and save it in a file inside that directory (the part starting with `>`).
 
 ```
  curl https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.2.0.min.css
+```
+
+If you want to add other libraries before we cover the asset pipeline, another option is to add them to your pages with CDN links in the built-in partial `app/views/layouts/application.html.erb`.  This isn't the right way, but it's okay until we learn the asset pipeline.  Here's an example:
+
+```html
+<!--app/views/layouts/application.html.erb-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BogApp</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= yield %>
+		<!-- include jQuery with a CDN -->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	</body>
+</html>
+
 ```
 
 ### 3. Routes
@@ -85,7 +118,6 @@ Go to `config/routes.rb`. Inside the routes `draw` block, erase all the commente
 
 ```ruby
 #config/routes.rb
-
 Rails.application.routes.draw do
 
 end
@@ -104,6 +136,8 @@ Your `routes.rb` will just be telling your app how to connect *HTTP requests** t
 >	e.g. if we had a `PuppiesController` that had a `index` method we could say
 >
 >		get "/puppies", to: "puppies#index"
+>
+> * Rails also has a built-in shorthand to create routes: `resources`
 
 
 
@@ -126,13 +160,13 @@ end
 
 ### 5. Creatures Controller and Index Method
 
-Let's begin by having Rails generate a creatures controller for us. Run the following command in your Terminal (without the $).
+Let's begin by having Rails generate a creatures controller for us. Run the following command in your Terminal.
 
 ```bash
-$ rails g controller creatures
+rails g controller creatures
 ```
 
-Next, we'll set up our `#index` method in the `creatures` controller.
+Next, we'll set up our `creatures#index` method (you'll often see this syntax for methods inside controllers, which are referred to as "controller actions": `controller#action`).
 
 ```ruby
 # app/controllers/creatures_controller.rb
@@ -151,22 +185,22 @@ end
 In Terminal, we create our `Creature` model using a rails generator as follows:
 
 ```bash
-$ rails g model creature name description
-$ rake db:migrate
+ rails g model creature name description
+ rake db:migrate
 ```
 
 #### Verify it works
 
-We go straight into Terminal to enter *rails console*.
+We go straight into Terminal to enter the Rails console.
 
 ```bash
-$ rails console
+ rails console
 
 > Creature.create({name: "Yoda", description: "Green little man"})
 	=> #<Creature ....>
 ```
 
-*This will avoid issues later with `index` trying to render Creatures that aren't there.*
+This will avoid issues later with index or show pages trying to render Creatures that aren't there.
 
 
 ####Seeds
@@ -183,12 +217,12 @@ Creature.create({name: "Luke", description: "Jedi"})
 Creature.create({name: "Darth Vader", description: "Father of Luke"})
 ```
 
-Run `$ rake db:seed` in Terminal. Note that the seed file will also get run every time you `rake db:reset` to reset your database.
+Run ` rake db:seed` in Terminal. Note that the seed file will also get run every time you `rake db:reset` to reset your database.
 
 
 ### 8. Creatures Index View
 
-If you look at your views, the `views/creatures` folder has already be created. We just need to add the file below:
+If you look at your views, the `views/creatures` folder has already been created. We just need to add the file below:
 
 ```html
 <!-- app/views/creatures/index.html.erb` -->
@@ -217,7 +251,7 @@ Rails.application.routes.draw do
 end
 ```
 
-### 10.A new method for Creatures
+### 10. A new method for Creatures
 
 A GET request for `/creatures/new` will search for a `CreaturesController#new` method, so we must create a method to handle this request. Our method will render the `new.html.erb` in the `app/views/creatures` folder.
 
@@ -232,6 +266,7 @@ class CreaturesController < ApplicationController
 		render :new
 	end
 end
+```
 
 ### 11. A new view for Creatures
 
@@ -266,7 +301,7 @@ Run `rake routes` from the Terminal to see the new route that Rails created for 
 
 ### 13. A Create Method
 
-Let's get this data into the database! We'll need to make a `creatures#create` controller method.
+Let's get this data into the database! We'll need to make a `creatures#create` controller action.
 
 ```ruby
 #app/controllers/creatures_controller.rb
@@ -311,14 +346,13 @@ end
 This sets `@creature` to a new instance of a `Creature`, which we can now share with or view in `views/creatures/new.html.erb`. Let's use it in the form helper.
 
 ```html
+
 <!-- app/views/creatures/new.html.erb -->
 
 <%= form_for @creature do |f| %>
-
 	<%= f.text_field :name %>
 	<%= f.text_area :description %>
 	<%= f.submit "save creature" %>
-
 <% end %>
 ```
 
@@ -338,7 +372,7 @@ Rails.application.routes.draw do
 end
 ```
 
-Now that we have our route, we'll add the controller method it uses.
+Now that we have our route, we'll add the controller action it uses.
 
 ```ruby
 #app/controllers/creatures_controller.rb
@@ -395,14 +429,14 @@ Editing a Creature model requires two seperate methods: one displays a form with
 If look back at how we handled the getting of our `new` form, we see the following pattern.
 
 * Make a route first
-* Define a controller method
+* Define a controller action
 * Render a form view
 
 The only difference is that now we need to know the `id` of the object to be edited. We get the following battle plan:
 
 * Make a route first
 	* Make sure it specifies the `id` of the record to be edited
-* Define a controller method
+* Define a controller action
 	* Retrieve the `id` of the specific record to be edited from `params`
 	* Use ActiveRecord and the `id` to find the record
 * Render a form view
@@ -487,14 +521,14 @@ That's pretty much the whole-shebang when comes to getting an edit page. Our pre
 Looking back at how we handled the submission of our `new` form, we see that the task of creating an item in the database used the following pattern.
 
 * Make a route first.
-* Define a controller method.
+* Define a controller action.
 * Redirect to some view.
 
 The only difference for updating versus creating is that now we will need to keep track of the `id` of the object being updated.
 
 * Make a route first.
 	* Make sure it specifies the `id` of the thing to be **updated**
-* Define a controller method.
+* Define a controller action.
 	* Retrieve the `id` of the record to be **updated** from `params`
 	* Use the `id` to find the record
 	* Retrieve the updated info sent from the form in `params`
@@ -515,7 +549,7 @@ Rails.application.routes.draw do
 end
 ```
 	
-Note the controller method we now need to create is `creatures#update`.
+Note the controller action we now need to create is `creatures#update`.
 
 * In the `CreaturesController`, create the `update` method mentioned above.
 
@@ -603,7 +637,7 @@ Rails.application.routes.draw do
 end
 ```
 
-At this point, you've created all the RESTful routes, implemented controller methods for each route, and made views for index, show, new, and edit. You've also created the model in the database and manually tested that everything works.
+At this point, you've created all the RESTful routes, implemented controller actions for each route, and made views for index, show, new, and edit. You've also created the model in the database and manually tested that everything works.
 
 #CONGRATULATIONS! You have created a Bog App! Take a break, you look *Swamped*!
 
