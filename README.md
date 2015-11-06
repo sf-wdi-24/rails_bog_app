@@ -76,7 +76,7 @@ REST stands for **REpresentational State Transfer**. We will strictly adhere to 
 
 In the Terminal, run the following commands:
 
-* `rails new bog_app -T` to create a new Rails project called `bog_app`, without including tests (`-T`)
+* `rails new bog_app -T --database=postgresql` to create a new Rails project called `bog_app`, without including tests (`-T`), using the PostgreSQL database
 * `cd bog_app` to move into the new `bog_app` directory
 * `rake db:create` to have Rails set up a database for the new app
 * `rails s` or `rails server` to start the WEBrick server
