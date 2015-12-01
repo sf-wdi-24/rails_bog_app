@@ -380,9 +380,9 @@ end
 
 Make another git commit.
 
-Part III: Change a Creature with `edit` (form) and `update` (database)
+## Part III: Change a Creature with `edit` (form) and `update` (database)
 
-Editing a Creature model requires two seperate methods:
+Editing a Creature model requires two separate methods:
 
 - `edit` displays a form with the model information to be edited by the user  
 - `update` actually updates information in the database when the form is submitted  
@@ -520,7 +520,7 @@ class CreaturesController < ApplicationController
 end
 ```
 
-Test your update in the broswer by editing the creature with an `id` of 1 (go to `/creatures/1/edit`). Then, make another git commit.
+Test your update in the browser by editing the creature with an `id` of 1 (go to `/creatures/1/edit`). Then, make another git commit.
 
 ## Part IV: Delete a Creature with Delete/Destory
 
@@ -564,7 +564,7 @@ class CreaturesController < ApplicationController
 end
 ```
 
-If you were tempted to use [`Creature.delete`](http://apidock.com/rails/ActiveRecord/Base/delete/class) to delete from the database, that would be okay *in this case* because there are no relatonships or associations among resources in this app. However, get in the habit of using `creature.destroy` to avoid problems with related resources later.
+If you were tempted to use [`Creature.delete`](http://apidock.com/rails/ActiveRecord/Base/delete/class) to delete from the database, that would be okay *in this case* because there are no relationships or associations among resources in this app. However, get in the habit of using `creature.destroy` to avoid problems with related resources later.
 
 Let's add a delete button in an existing view.
 
@@ -595,10 +595,10 @@ end
 
 At this point, you've created all the RESTful routes, implemented controller actions for each route, and made views for index, show, new, and edit. You've also created the model in the database and manually tested that everything works.
 
-## CONGRATULATIONS! You have created a Bog App! Take a break, you look *Swamped*!
-
-![](https://cloud.githubusercontent.com/assets/7833470/11501240/83536030-97e7-11e5-8060-fa7666de7165.jpeg)
-
 ## Submission
 
 Once you've finished the assignment and pushed your work to GitHub, make a pull request from your fork to the original repo.
+
+## CONGRATULATIONS! You have created a Bog App! Take a break, you look *Swamped*!
+
+![](https://cloud.githubusercontent.com/assets/7833470/11501240/83536030-97e7-11e5-8060-fa7666de7165.jpeg)
