@@ -33,7 +33,7 @@ REST stands for **REpresentational State Transfer**. We will strictly adhere to 
 | PUT or PATCH | /creatures/:id | update | updating a specific creature in the database |
 | DELETE | /creatures/:id | destroy | deleting a specific creature in the database |
 
-## Part I: Displaying All Creatures with `index`
+## Part I: Display all creatures with `index`
 
 #### 1. Set up a new Rails project
 
@@ -58,7 +58,7 @@ Third-party libraries belong in the `vendor/assets` sub-directory of your Rails 
 ➜  curl https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.3.6.min.css
 ```
 
-#### 3. Define `root` and creatures `index` routes
+#### 3. Define the `root` and creatures `index` routes
 
 In Sublime, open up `config/routes.rb`. Inside the routes `draw` block, erase all the commented text. It should now look exactly like this:
 
@@ -92,129 +92,142 @@ end
 
 In the Terminal, running `rake routes` will list all your routes. You'll see that some routes have a "prefix" listed. These routes have associated route helpers, which are methods Rails creates for us to generate URLs. The format of a route helper is `prefix_path`. For example, `creatures_path` is the full route helper for `GET /creatures` (the creatures index). We often use route helpers to generate URLs in forms, links, and controllers.
 
-#### 4. Creatures Controller, Index Action
+#### 4. Set up the creatures controller and `index` action
 
-Let's begin by having Rails generate a creatures controller for us. Run the following command in your Terminal.
+Run the following command in the Terminal to generate a controller for creatures:
 
-```bash
-rails g controller creatures
+```zsh
+➜  rails g controller creatures
 ```
 
-Next, we'll set up our `creatures#index` method (you'll often see this syntax for methods inside controllers, which are referred to as "controller actions": `controller#action`).
+Next, define the `creatures#index` action in the creatures controller:
 
 ```ruby
+#
 # app/controllers/creatures_controller.rb
+#
 
 class CreaturesController < ApplicationController
-  # show all creatures
+  
+  # display all creatures
   def index
     # get all creatures from db and save to instance variable
-    @creatures = Creature.all  
-    # render index view file (it will have access to instance variables)
+    @creatures = Creature.all
+    # render index view (it has access to instance variables)
     render :index
   end
+
 end
 ```
 
-#### 5. Create a creature
+#### 5. Set up the creature model
 
-In Terminal, we create our `Creature` model using a rails generator as follows:
+Run the following command in the Terminal to generate the `Creature` model:
 
-```bash
- rails g model creature name description
+```zsh
+➜  rails g model creature name description
 ```
 
-Then migrate to update the database with this change:
+Run the migration to update the database with this change:
 
-```bash
-rake db:migrate
+```zsh
+➜  rake db:migrate
 ```
 
-#### 6. Verify it works
+#### 6. Create a creature
 
-In the Terminal, enter the Rails console.  The Rails console is built on top of irb, but it has access to your Rails project. Use it to create a Creature model
+In the Terminal, enter the Rails console. The Rails console is built on top of `irb`, and it has access to your Rails project. Use it to create a new instance of a creature.
 
-```bash
-rails console  # do this in the main Terminal (file system)
+```zsh
+➜  rails c
+irb(main):001:0> Creature.create({name: "Yoda", description: "Little green man"})
 ```
+
+#### 7. Seed your database
+
+When you create an application in development, you typically want some mock data to play with. In Rails, you can just drop this into the `db/seeds.rb` file.
+
+Back in Sublime, add some seed data to `db/seeds.rb`:
 
 ```ruby
-Creature.create({name: "Yoda", description: "Green little man"})  # do this once you're inside Rails console
-```
-
-#### 7. Seeds
-
-When we create an application in development, we typically will want some mock data to play with. In Rails, we can just drop this into the `db/seeds.rb` file.
-
-Back in your text editor, add some seed data to `db/seeds.rb`.
-
-```ruby
+#
 # db/seeds.rb
+#
 
 Creature.create({name: "Luke", description: "Jedi"})
-
 Creature.create({name: "Darth Vader", description: "Father of Luke"})
 ```
 
-Run `rake db:seed` in Terminal (not inside rails console!). Note that the seed file will also get run every time you `rake db:reset` to reset your database.
+In the Terminal (not inside rails console!), run `rake db:seed`. Note that the seeds file will also run every time you run `rake db:reset` to reset your database.
 
-#### 8. Creatures index view
+#### 8. Set up the creatures `index` view
 
-If you look at your views, the `views/creatures` folder has already been created. We just need to add the file below:
+If you look inside the `app/views` directory, the `/creatures` folder has already been created (this happened when you ran `rails g controller creatures`). Add an `index.html.erb` file to the `app/views/creatures` folder.
+
+Inside your creatures index view, iterate through all the creatures in the database, and display them on the page:
 
 ```html
-<!-- app/views/creatures/index.html.erb` -->
+<!-- app/views/creatures/index.html.erb -->
 
 <% @creatures.each do |creature| %>
-
-  <div>
-    Name: <%= creature.name %> <br>
-    Description: <%=  creature.description %>
-  </div>
-
+  <p>
+    <strong>Name:</strong> <%= creature.name %><br>
+    <strong>Description:</strong> <%=  creature.description %>
+  </p>
+  <hr>
 <% end %>
 ```
 
-If you haven't yet, make a git commit for your work so far.
+If you haven't already, `git add` and `git commit` the work you've done so far.
 
-## Part II: Make A Creature with `new` (form) and `create` (database)
+## Part II: Make a creature with `new` (form) and `create` (database)
 
-#### 1. A route for the new creature form
+#### 1. Define a route for the new creature form
 
-The Rails convention is to make a form for new creatures available at the `/creatures/new` path in our browser. Let's use `resources` to add this route.
+The Rails convention is to make a form for new creatures at the `/creatures/new` path in our browser. Use `resources` to add this route:
 
 ```ruby
+#
 #/config/routes.rb
+#
 
 Rails.application.routes.draw do
-  root to: 'creatures#index'
+  root to: "creatures#index"
 
   resources :creatures, only: [:index, :new]
-  # resources :creatures with :new is equivalent to adding:
-  # get "/creatures/new", to: "creatures#new", as: "new_creature"
+  
+  # resources :creatures, only: [:index, :new] is equivalent to:
+  # get "/creatures", to: "creatures#index"
+  # get "/creatures/new", to: "creatures#new"
 end
 ```
 
-#### 2. A `new` controller action for creatures
+#### 2. Set up the creatures `new` action
 
-A GET request for `/creatures/new` will search for a `creatures#new` action, so we must create a method to handle this request. It will render the `new.html.erb` in the `app/views/creatures` folder.
+When a user sends a GET request for `/creatures/new`, your server will search for a `creatures#new` action, so you need to create a controller method to handle this request. `creatures#new` should render the view `new.html.erb` inside the `app/views/creatures` folder.
 
 ```ruby
+#
 # app/controllers/creatures_controller.rb
+#
 
 class CreaturesController < ApplicationController
+	
+  ...
 
-  # ... keep your other content, and add:
   # show the new creature form
   def new
-    render :new   # optional; this is the default behavior
+    render :new
   end
+
 end
 ```
 
-#### 3. A view for the new creature form
+#### 3. Set up the view for the new creature form
 
-Let's create the `app/views/creatures/new.html.erb` with a form that the user can use to sumbit new creatures to the application. Note: the url for the route is `/creatures` because it's the collection we are submiting to, and the method is `POST` because we want to create.
+Create the view `new.html.erb` inside the `app/views/creatures` folder. On this view, users should see a form to submit new creatures to the app.
+
+Note: the url for the route is `/creatures` because it's the collection we are submiting to, and the method is `POST` because we want to create.
 
 ```html
 <!-- app/views/creatures/new.html.erb -->
