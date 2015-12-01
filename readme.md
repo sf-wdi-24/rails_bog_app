@@ -5,9 +5,7 @@
 | Review **CRUD** in the context of a Rails application, especially **updating** and **deleting** a resource. |
 | Implement **form helpers** and **partials** in a  Rails application. |
 
-Researchers are collecting data on a local bog and need an app to quickly record field data. Your goal is to create a **Bog App**.
-
-If you get stuck at any point, feel free to reference the <a href="https://github.com/sf-wdi-24/rails_bog_app/tree/solution" target="_blank">solution branch</a>.
+Researchers are collecting data on a local bog and need an app to quickly record field data. Your goal is to create a **Bog App**. If you get stuck at any point, feel free to reference the <a href="https://github.com/sf-wdi-24/rails_bog_app/tree/solution" target="_blank">solution branch</a>.
 
 ## Background
 
