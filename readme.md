@@ -1,13 +1,13 @@
 # <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Rails Bog App
 
-Researchers are collecting data on a local bog and need an app to quickly record field data. Your goal is to create a **Bog App**.
-
 | Objectives |
 | :--- |
 | Review **CRUD** in the context of a Rails application, especially **updating** and **deleting** a resource. |
 | Implement **form helpers** and **partials** in a  Rails application. |
 
-If you get stuck at any point, feel free to reference the <a href="https://github.com/sf-wdi-24/rails_bog_app/tree/solution" target="_blank">working solution code</a>.
+Researchers are collecting data on a local bog and need an app to quickly record field data. Your goal is to create a **Bog App**.
+
+If you get stuck at any point, feel free to reference the <a href="https://github.com/sf-wdi-24/rails_bog_app/tree/solution" target="_blank">solution branch</a>.
 
 ## Background
 
@@ -50,7 +50,7 @@ Fork this repo, and clone it into your `develop` folder on your local machine. C
 
 Your app should be up and running at localhost:3000.
 
-#### 2. Add Bootstrap
+#### 2. Add Bootstrap to your project
 
 Rails handles CSS and JavaScript with a system called the asset pipeline. We'll go over it more next week, but for now, you'll add Bootstrap via the asset pipeline.
 
