@@ -26,7 +26,7 @@ Or maybe Sir Didymus and The Bog of Eternal Stench...
 REST stands for **REpresentational State Transfer**. We will strictly adhere to RESTful routing for Rails resources, and Rails sets up a lot of it for us.
 
 | Verb | Path | Action | Used for |
-| :--- |
+| :--- | :--- | :--- | :--- |
 | GET | /creatures | index | displaying list of all creatures |
 | GET | /creatures/new | new | displaying an HTML form to create a new creature |
 | POST | /creatures | create | creating a new creature in the database |
@@ -54,10 +54,10 @@ Your app should be up and running at localhost:3000.
 
 Rails handles CSS and JavaScript with a system called the asset pipeline. We'll go over it more next week, but for now, you'll add Bootstrap via the asset pipeline.
 
-Third-party libraries belong in the `vendor/assets` sub-directory of your Rails app. Use the following Terminal command to download the Bootstrap CSS file (via `curl`) and save it in a new `bootstrap-3.2.0.min.css` file inside the `vendor/assets/stylesheets` sub-directory.
+Third-party libraries belong in the `vendor/assets` sub-directory of your Rails app. Use the following Terminal command to download the Bootstrap CSS file (via `curl`) and save it in a new `bootstrap-3.3.6.min.css` file inside the `vendor/assets/stylesheets` sub-directory.
 
 ```zsh
-➜  curl https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.2.0.min.css
+➜  curl https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.3.6.min.css
 ```
 
 #### 3. Define `root` and creatures `index` routes
