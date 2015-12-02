@@ -41,7 +41,9 @@ Fork this repo, and clone it into your `develop` folder on your local machine. C
 
 ```zsh
 ➜  rails new bog_app -T
-➜  cd bog_app
+➜  mv bog_app/* ./
+➜  rm -rf bog_app
+➜  rm README.rdoc
 ➜  rake db:create
 ➜  rails s
 ```
