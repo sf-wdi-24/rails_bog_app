@@ -60,6 +60,22 @@ Third-party libraries belong in the `vendor/assets` sub-directory of your Rails 
 ➜  curl https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.3.6.min.css
 ```
 
+To include the Bootstrap file you just downloaded, require it in `app/assets/stylesheets/application.css`:
+
+```css
+/*
+ * app/assets/stylesheets/application.css
+ */
+
+/*
+ * ...
+ *
+ *= require bootstrap-3.3.6.min
+ *= require_tree .
+ *= require_self
+ */
+```
+
 #### 3. Define the `root` and creatures `index` routes
 
 In Sublime, open up `config/routes.rb`. Inside the routes `draw` block, erase all the commented text. It should now look exactly like this:
