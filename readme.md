@@ -612,7 +612,7 @@ Rails.application.routes.draw do
 end
 ```
 
-At this point, you're using all the RESTful routes for creatures. Refactor your routes to reflect that you're using all of `resources` for creatures (remove the `only:` part):
+At this point, you're using all the RESTful routes for creatures. Refactor your routes to reflect that you're using all the `resources` (remove the `only:` part):
 
 ```ruby
 #
