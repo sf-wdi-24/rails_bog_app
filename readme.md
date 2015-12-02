@@ -516,7 +516,7 @@ Create an `edit.html.erb` view inside `views/creatures`. Jump-start the edit for
 <% end %>
 ```
 
-Go to `localhost:3000/creatures/1/edit` in the browser to see what it looks like so far.  Check the `method` and `action` of the form. Also look at the `_method` input.  What is it doing? The Rails form helper knows to turn this same code into an edit form because you're on the edit page!
+Go to `localhost:3000/creatures/1/edit` in the browser to see what it looks like so far.  Check the `method` and `action` of the form. Also look at the hidden input with `name="_method"`.  What is it doing? The Rails form helper knows to turn this same code into an edit form because you're on the edit page!
 
 #### 4. Define a route to `update` a specific creature
 
