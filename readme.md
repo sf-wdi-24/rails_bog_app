@@ -116,7 +116,7 @@ class CreaturesController < ApplicationController
     # get all creatures from db and save to instance variable
     @creatures = Creature.all
 
-    # render the index view (it has access to instance variables)
+    # render the index view (it has access to instance variable)
     render :index
   end
 
@@ -376,7 +376,7 @@ class CreaturesController < ApplicationController
     # and save it to an instance variable
     @creature = Creature.find_by_id(creature_id)
 
-    # render the show view (it has access to instance variables)
+    # render the show view (it has access to instance variable)
     render :show
   end
 
@@ -478,7 +478,7 @@ class CreaturesController < ApplicationController
     # and save it to an instance variable
     @creature = Creature.find_by_id(creature_id)
 
-    # render the edit view (it has access to instance variables)
+    # render the edit view (it has access to instance variable)
     render :edit
   end
 
