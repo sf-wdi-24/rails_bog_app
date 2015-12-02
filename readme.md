@@ -504,7 +504,7 @@ end
 
 #### 3. Set up the view for the edit creature form
 
-Create an `edit.html.erb` view inside `views/creatures`. Jump start the edit form by copying the form from `views/creatures/new.html.erb` into `views/creatures/edit.html.erb`:
+Create an `edit.html.erb` view inside `views/creatures`. Jump-start the edit form by copying the form from `views/creatures/new.html.erb` into `views/creatures/edit.html.erb`:
 
 ```html
 <!-- app/views/creatures/edit.html.erb -->
