@@ -255,7 +255,7 @@ Create the view `new.html.erb` inside the `app/views/creatures` folder. On this 
 <% end %>
 ```
 
-**Note:** The URL you're submitting the form to is `/creatures` because it's the database collection for creatures, and the method is `POST` because you're *creating* a new creature.
+**Note:** The URL you're submitting the form to is `/creatures` because it's the database collection for creatures, and the method is `post` because you're *creating* a new creature.
 
 Go to `localhost:3000/creatures/new` in the browser, and inspect the HTML for the form on the page. `form_for` is a "form helper", and it generates more than what you might guess from the `erb` you wrote in the view. Note the `method` and `action` in the form - what route do you think you should define next?
 
