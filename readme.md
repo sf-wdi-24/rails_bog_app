@@ -431,22 +431,6 @@ Editing a specific creature requires two methods:
 * `edit` displays a form with the existing creature info to be edited by the user
 * `update` changes the creature info in the database when the user submits the form
 
-If you look back to how you set up your new creature form, you see the following pattern:
-
-* Make the route first
-* Define the controller action
-* Render the view with the form
-
-The only difference for editing is that now you'll need to know the `id` of the creature to be edited. You'll follow this plan:
-
-* Make the route first
-  * Make sure it specifies the `id` of the creature to be edited
-* Define the controller action
-  * Get the `id` of the specific creature from `params`
-  * Use the `id` to find the creature in the database
-* Render the view with the form
-  * Display the edit form, with the current information for the creature to be edited
-
 #### 1. Define a route for the `edit` creature form
 
 Use `resources` to define a route that displays the edit creature form:
@@ -514,25 +498,6 @@ Create an `edit.html.erb` view inside `views/creatures`. Jump start the edit for
 ```
 
 Go to `localhost:3000/creatures/1/edit` in the browser to see what it looks like so far.  Check the `method` and `action` of the form. Also look at the `_method` input.  What is it doing? The Rails form helper knows to turn this same code into an edit form because you're on the edit page!
-
----
-
-Looking back at how you handled the submission of your new creature form, you see the following pattern:
-
-* Make the route first
-* Define the controller action
-* Redirect to the show page for the newly created creature
-
-The only difference for updating is that now you'll need to know the `id` of the creature to be updated. You'll follow this plan:
-
-* Make the route first
-  * Make sure it specifies the `id` of the creature to be *updated*
-* Define the controller action
-  * Get the `id` of the specific creature from `params`
-  * Use the `id` to find the creature in the database
-  * Retrieve the updated creature info sent from edit form params
-  * Update the creature
-* Redirect to the show page for the newly created creature
 
 #### 4. Define a route to `update` a specific creature
 
