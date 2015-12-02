@@ -1,0 +1,8 @@
+<h1>Welcome to the Bog!</h1>
+<hr>
+<% @creatures.each do |creature| %>
+  <p>
+    <strong>Name:</strong> <%= creature.name %><br>
+    <strong>Description:</strong> <%= creature.description %>
+  </p>
+<% end %>
