@@ -429,7 +429,8 @@ class CreaturesController < ApplicationController
     # create a new creature from `creature_params`
     creature = Creature.new(creature_params)
 
-    # if creature saves, redirect to route that displays ONLY the newly created creature
+    # if creature saves, redirect to route that displays
+    # ONLY the newly created creature
     if creature.save
       redirect_to creature_path(creature)
       # redirect_to creature_path(creature) is equivalent to:
