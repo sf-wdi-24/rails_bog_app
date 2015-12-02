@@ -175,12 +175,12 @@ Inside your creatures index view, iterate through all the creatures in the datab
 <% @creatures.each do |creature| %>
   <p>
     <strong>Name:</strong> <%= creature.name %><br>
-    <strong>Description:</strong> <%=  creature.description %>
+    <strong>Description:</strong> <%= creature.description %>
   </p>
 <% end %>
 ```
 
-If you haven't already, `git add` and `git commit` the work you've done so far.
+Go to `localhost:3000` in the browser. What do you see on the page? If you haven't already, `git add` and `git commit` the work you've done so far.
 
 ## Part II: Make a creature with `new` (form) and `create` (database)
 
