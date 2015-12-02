@@ -90,7 +90,7 @@ RouteApp::Application.routes.draw do
 end
 ```
 
-In the Terminal, running `rake routes` will list all your routes. You'll see that some routes have a "prefix" listed. These routes have associated route helpers, which are methods Rails creates for us to generate URLs. The format of a route helper is `prefix_path`. For example, `creatures_path` is the full route helper for `GET /creatures` (the creatures index). We often use route helpers to generate URLs in forms, links, and controllers.
+In the Terminal, running `rake routes` will list all your routes. You'll see that some routes have a "prefix" listed. These routes have associated route helpers, which are methods Rails creates to generate URLs. The format of a route helper is `prefix_path`. For example, `creatures_path` is the full route helper for `GET /creatures` (the creatures index). We often use route helpers to generate URLs in forms, links, and controllers.
 
 #### 4. Set up the creatures controller and `index` action
 
@@ -239,7 +239,7 @@ Create the view `new.html.erb` inside the `app/views/creatures` folder. On this 
 <% end %>
 ```
 
-Go to `localhost:3000/creatures/new` in the browser, and inspect the HTML for the form on the page. `form_for` is a "form helper", and it generates more than what you might guess from the `erb` you wrote in the view. Note the `method` and `action` in the form - what route do you think we should define next?
+Go to `localhost:3000/creatures/new` in the browser, and inspect the HTML for the form on the page. `form_for` is a "form helper", and it generates more than what you might guess from the `erb` you wrote in the view. Note the `method` and `action` in the form - what route do you think you should define next?
 
 #### 4. Define a route to `create` creatures in the database
 
@@ -536,7 +536,7 @@ The only difference for updating is that now you'll need to know the `id` of the
 
 #### 4. Define a route to `update` a specific creature
 
-The update route will use the `id` of the creature to be updated. In Express, we decided between `PUT /creatures/:id` and `PATCH /creatures/:id`, depending on the type of update we wanted to do. When you add `:update` to your `resources :creatures`, Rails creates both the `PUT` and the `PATCH` routes!
+The update route will use the `id` of the creature to be updated. In Express, you decided between `PUT /creatures/:id` and `PATCH /creatures/:id`, depending on the type of update you wanted to do. When you add `:update` to your `resources :creatures`, Rails creates both the `PUT` and the `PATCH` routes!
 
 ```ruby
 #
@@ -628,60 +628,72 @@ Rails.application.routes.draw do
 end
 ```
 
-Next, we create a controller action for this new route, in the `CreaturesController`.
+At this point, you're using all the RESTful routes for creatures. Refactor your routes to reflect that you're using all of `resources` for creatures (remove the `only:` part):
 
 ```ruby
-#app/controllers/creatures_controller.rb
+#
+# config/routes.rb
+#
+
+Rails.application.routes.draw do
+  root to: "creatures#index"
+  resources :creatures
+end
+```
+
+Run `rake routes` in your Terminal to check the routes `resources` generated for you.
+
+#### 2. Set up the creatures `destroy` action
+
+In the `CreaturesController`, define an `destroy` method:
+
+```ruby
+#
+# app/controllers/creatures_controller.rb
+#
 
 class CreaturesController < ApplicationController
 
-  # keep your other methods, and add:
-  # delete a specific creature by id
+  ...
+
+  # delete a specific creature from the database
   def destroy
-    # save the id parameter
-    id = params[:id]
-    # find the creature to delete by id
-    creature = Creature.find(id)
+    # get the creature id from the url params
+    creature_id = params[:id]
+
+    # use `creature_id` to find the creature in the database
+    # and save it to an instance variable
+    creature = Creature.find_by_id(creature_id)
+
     # destroy the creature
     creature.destroy
+    
     # redirect to creatures index
     redirect_to creatures_path
-    # ^ same as redirect_to "/creatures"
+    # redirect_to creatures_path is equivalent to:
+    # redirect_to "/creatures"
   end
 
 end
 ```
 
-If you were tempted to use [`Creature.delete`](http://apidock.com/rails/ActiveRecord/Base/delete/class) to delete from the database, that would be okay *in this case* because there are no relationships or associations among resources in this app. However, get in the habit of using `creature.destroy` to avoid problems with related resources later.
+If you were tempted to use <a href="http://apidock.com/rails/ActiveRecord/Base/delete/class" target="_blank">Creature.delete</a> to delete from the database, that would be okay *in this case* because there are no relationships or associations among resources in this app. However, get in the habit of using `creature.destroy` to avoid problems with related resources later.
 
-Let's add a delete button in an existing view.
+#### 3. Add a delete button
+
+Add a delete button to the view that displays a single creature:
 
 ```html
-<!-- app/views/creatures/index.html.erb -->
+<!-- app/views/creatures/show.html.erb -->
 
-<% @creatures.each do |creature| %>
-  <div>
-    Name: <%= creature.name %> <br>
-    Description: <%=  creature.description %>
-        <%= button_to "Delete", creature, method: :delete %>
-  </div>
-<% end %>
+<h3><%= @creature.name %></h3>
+<p><%=  @creature.description %></p>
+<%= button_to "Delete", @creature, method: :delete %>
 ```
 
-Visit `localhost:3000/` and check out the delete button HTML.  Clicking one of the delete buttons to manually test your delete feature.
+Visit `localhost:3000/creatures/1` in the browser, and inspect the HTML for the delete button. Click the delete button to manually test this feature.
 
-At this point, we have used all the RESTful routes for creatures.  Refactor your `config/routes.rb` to use reflect that we're using all of `resources` for creatures (remove the `only:` part).
-
-```ruby
-#/config/routes.rb
-Rails.application.routes.draw do
-  root to: 'creatures#index'
-  resources :creatures
-  # ^ same as resources :creatures, only: [:index, :new, :create, :show, :edit, :update, :destroy]
-end
-```
-
-At this point, you've created all the RESTful routes, implemented controller actions for each route, and made views for index, show, new, and edit. You've also created the model in the database and manually tested that everything works.
+At this point, you've created all the RESTful routes, implemented controller actions for each route, and made views for `index`, `show`, `new`, and `edit`. You've also created the `Creature` model in the database and manually tested that everything works.
 
 ## Submission
 
