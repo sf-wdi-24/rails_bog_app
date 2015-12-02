@@ -661,8 +661,6 @@ class CreaturesController < ApplicationController
 end
 ```
 
-If you were tempted to use <a href="http://apidock.com/rails/ActiveRecord/Base/delete/class" target="_blank">Creature.delete</a> to delete from the database, that would be okay *in this case* because there are no relationships or associations among resources in this app. However, get in the habit of using `creature.destroy` to avoid problems with related resources later.
-
 #### 3. Add a delete button
 
 Add a delete button to the view that displays a single creature:
