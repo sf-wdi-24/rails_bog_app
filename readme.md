@@ -640,7 +640,7 @@ class CreaturesController < ApplicationController
 
   ...
 
-  # delete a specific creature from the database
+  # delete a creature from the database
   def destroy
     # get the creature id from the url params
     creature_id = params[:id]
