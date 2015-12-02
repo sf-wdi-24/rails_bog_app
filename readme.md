@@ -2,8 +2,8 @@
 
 | Objectives |
 | :--- |
-| Review **CRUD** in the context of a Rails application, especially **updating** and **deleting** a resource. |
-| Implement **form helpers** and **partials** in a  Rails application. |
+| Review **CRUD** in the context of a Rails application, especially **update** and **delete**. |
+| Implement **form helpers** in a  Rails application. |
 
 Researchers are collecting data on a local bog and need an app to quickly record field data. Your goal is to create a **Bog App**. If you get stuck at any point, feel free to reference the <a href="https://github.com/sf-wdi-24/rails_bog_app/tree/solution" target="_blank">solution branch</a>.
 
@@ -41,7 +41,9 @@ Fork this repo, and clone it into your `develop` folder on your local machine. C
 
 ```zsh
 ➜  rails new bog_app -T
-➜  cd bog_app
+➜  mv bog_app/* ./
+➜  rm -rf bog_app
+➜  rm README.rdoc
 ➜  rake db:create
 ➜  rails s
 ```
@@ -56,6 +58,22 @@ Third-party libraries belong in the `vendor/assets` sub-directory of your Rails 
 
 ```zsh
 ➜  curl https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.3.6.min.css
+```
+
+To include the Bootstrap file you just downloaded, require it in `app/assets/stylesheets/application.css`:
+
+```css
+/*
+ * app/assets/stylesheets/application.css
+ */
+
+/*
+ * ...
+ *
+ *= require bootstrap-3.3.6.min
+ *= require_tree .
+ *= require_self
+ */
 ```
 
 #### 3. Define the `root` and creatures `index` routes
@@ -114,7 +132,7 @@ class CreaturesController < ApplicationController
     # get all creatures from db and save to instance variable
     @creatures = Creature.all
 
-    # render the index view (it has access to instance variables)
+    # render the index view (it has access to instance variable)
     render :index
   end
 
@@ -173,12 +191,12 @@ Inside your creatures index view, iterate through all the creatures in the datab
 <% @creatures.each do |creature| %>
   <p>
     <strong>Name:</strong> <%= creature.name %><br>
-    <strong>Description:</strong> <%=  creature.description %>
+    <strong>Description:</strong> <%= creature.description %>
   </p>
 <% end %>
 ```
 
-If you haven't already, `git add` and `git commit` the work you've done so far.
+Go to `localhost:3000` in the browser. What do you see on the page? If you haven't already, `git add` and `git commit` the work you've done so far.
 
 ## Part II: Make a creature with `new` (form) and `create` (database)
 
@@ -227,8 +245,6 @@ end
 
 Create the view `new.html.erb` inside the `app/views/creatures` folder. On this view, users should see a form to create new creatures in the database.
 
-**Note:** The URL you're submitting the form to is `/creatures` because it's the database collection for creatures, and the method is `POST` because you're *creating* a new creature.
-
 ```html
 <!-- app/views/creatures/new.html.erb -->
 
@@ -238,6 +254,8 @@ Create the view `new.html.erb` inside the `app/views/creatures` folder. On this 
   <%= f.submit "Save Creature" %>
 <% end %>
 ```
+
+**Note:** The URL you're submitting the form to is `/creatures` because it's the database collection for creatures, and the method is `post` because you're *creating* a new creature.
 
 Go to `localhost:3000/creatures/new` in the browser, and inspect the HTML for the form on the page. `form_for` is a "form helper", and it generates more than what you might guess from the `erb` you wrote in the view. Note the `method` and `action` in the form - what route do you think you should define next?
 
@@ -374,7 +392,7 @@ class CreaturesController < ApplicationController
     # and save it to an instance variable
     @creature = Creature.find_by_id(creature_id)
 
-    # render the show view (it has access to instance variables)
+    # render the show view (it has access to instance variable)
     render :show
   end
 
@@ -411,7 +429,8 @@ class CreaturesController < ApplicationController
     # create a new creature from `creature_params`
     creature = Creature.new(creature_params)
 
-    # if creature saves, redirect to route that displays ONLY the newly created creature
+    # if creature saves, redirect to route that displays
+    # ONLY the newly created creature
     if creature.save
       redirect_to creature_path(creature)
       # redirect_to creature_path(creature) is equivalent to:
@@ -476,7 +495,7 @@ class CreaturesController < ApplicationController
     # and save it to an instance variable
     @creature = Creature.find_by_id(creature_id)
 
-    # render the edit view (it has access to instance variables)
+    # render the edit view (it has access to instance variable)
     render :edit
   end
 
@@ -485,7 +504,7 @@ end
 
 #### 3. Set up the view for the edit creature form
 
-Create an `edit.html.erb` view inside `views/creatures`. Jump start the edit form by copying the form from `views/creatures/new.html.erb` into `views/creatures/edit.html.erb`:
+Create an `edit.html.erb` view inside `views/creatures`. Jump-start the edit form by copying the form from `views/creatures/new.html.erb` into `views/creatures/edit.html.erb`:
 
 ```html
 <!-- app/views/creatures/edit.html.erb -->
@@ -497,7 +516,7 @@ Create an `edit.html.erb` view inside `views/creatures`. Jump start the edit for
 <% end %>
 ```
 
-Go to `localhost:3000/creatures/1/edit` in the browser to see what it looks like so far.  Check the `method` and `action` of the form. Also look at the `_method` input.  What is it doing? The Rails form helper knows to turn this same code into an edit form because you're on the edit page!
+Go to `localhost:3000/creatures/1/edit` in the browser to see what it looks like so far.  Check the `method` and `action` of the form. Also look at the hidden input with `name="_method"`.  What is it doing? The Rails form helper knows to turn this same code into an edit form because you're on the edit page!
 
 #### 4. Define a route to `update` a specific creature
 
@@ -593,7 +612,7 @@ Rails.application.routes.draw do
 end
 ```
 
-At this point, you're using all the RESTful routes for creatures. Refactor your routes to reflect that you're using all of `resources` for creatures (remove the `only:` part):
+At this point, you're using all the RESTful routes for creatures. Refactor your routes to reflect that you're using all the `resources` (remove the `only:` part):
 
 ```ruby
 #
@@ -621,7 +640,7 @@ class CreaturesController < ApplicationController
 
   ...
 
-  # delete a specific creature from the database
+  # delete a creature from the database
   def destroy
     # get the creature id from the url params
     creature_id = params[:id]
@@ -641,8 +660,6 @@ class CreaturesController < ApplicationController
 
 end
 ```
-
-If you were tempted to use <a href="http://apidock.com/rails/ActiveRecord/Base/delete/class" target="_blank">Creature.delete</a> to delete from the database, that would be okay *in this case* because there are no relationships or associations among resources in this app. However, get in the habit of using `creature.destroy` to avoid problems with related resources later.
 
 #### 3. Add a delete button
 
