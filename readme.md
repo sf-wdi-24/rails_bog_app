@@ -113,7 +113,7 @@ class CreaturesController < ApplicationController
   def index
     # get all creatures from db and save to instance variable
     @creatures = Creature.all
-    
+
     # render the index view (it has access to instance variables)
     render :index
   end
@@ -279,10 +279,10 @@ class CreaturesController < ApplicationController
   def create
     # whitelist params and save them to a variable
     creature_params = params.require(:creature).permit(:name, :description)
-    
+
     # create a new creature from `creature_params`
     creature = Creature.new(creature_params)
-    
+
     # if creature saves, redirect to route that displays all creatures
     if creature.save
       redirect_to creatures_path
@@ -373,7 +373,7 @@ class CreaturesController < ApplicationController
     # use `creature_id` to find the creature in the database
     # and save it to an instance variable
     @creature = Creature.find_by_id(creature_id)
-    
+
     # render the show view (it has access to instance variables)
     render :show
   end
@@ -407,11 +407,11 @@ class CreaturesController < ApplicationController
   def create
     # whitelist params and save them to a variable
     creature_params = params.require(:creature).permit(:name, :description)
-    
+
     # create a new creature from `creature_params`
     creature = Creature.new(creature_params)
-    
-    # if creature saves, redirect to route that displays all creatures
+
+    # if creature saves, redirect to route that displays ONLY the newly created creature
     if creature.save
       redirect_to creature_path(creature)
       # redirect_to creature_path(creature) is equivalent to:
@@ -491,7 +491,7 @@ class CreaturesController < ApplicationController
     # use `creature_id` to find the creature in the database
     # and save it to an instance variable
     @creature = Creature.find_by_id(creature_id)
-    
+
     # render the edit view (it has access to instance variables)
     render :edit
   end
@@ -515,90 +515,115 @@ Create an `edit.html.erb` view inside `views/creatures`. Jump start the edit for
 
 Go to `localhost:3000/creatures/1/edit` in the browser to see what it looks like so far.  Check the `method` and `action` of the form. Also look at the `_method` input.  What is it doing? The Rails form helper knows to turn this same code into an edit form because you're on the edit page!
 
+---
 
-#### 4. Updating the database with form data
+Looking back at how you handled the submission of your new creature form, you see the following pattern:
 
-Looking back at how we handled the submission of our `new` form, we see that the task of creating an item in the database used the following pattern.
+* Make the route first
+* Define the controller action
+* Redirect to the show page for the newly created creature
 
-* Make a route first.
-* Define a controller action.
-* Redirect to some view.
+The only difference for updating is that now you'll need to know the `id` of the creature to be updated. You'll follow this plan:
 
-The only difference for updating versus creating is that now we will need to keep track of the `id` of the object being updated.
+* Make the route first
+  * Make sure it specifies the `id` of the creature to be *updated*
+* Define the controller action
+  * Get the `id` of the specific creature from `params`
+  * Use the `id` to find the creature in the database
+  * Retrieve the updated creature info sent from edit form params
+  * Update the creature
+* Redirect to the show page for the newly created creature
 
-* Make a route first.
-  * Make sure it specifies the `id` of the thing to be **updated**
-* Define a controller action.
-  * Retrieve the `id` of the record to be **updated** from `params`
-  * Use the `id` to find the record
-  * Retrieve the updated info sent from the form in `params`
-  * Update the record
-* Redirect to show the updated record.
-  * Use `id` to redirect to that item's show page
+#### 4. Define a route to `update` a specific creature
 
-The update route will use the `id` of the object to be updated. In Express, we decided between `PUT /creatures/:id` and `PATCH /creatures/:id`.  When we add `:update` to our creatures `resources` in `routes.rb`, Rails creates both routes!
+The update route will use the `id` of the creature to be updated. In Express, we decided between `PUT /creatures/:id` and `PATCH /creatures/:id`, depending on the type of update we wanted to do. When you add `:update` to your `resources :creatures`, Rails creates both the `PUT` and the `PATCH` routes!
 
 ```ruby
-#/config/routes.rb
+#
+# config/routes.rb
+#
 
 Rails.application.routes.draw do
-  root to: 'creatures#index'
-  resources :creatures, only: [:index, :new, :show, :create, :edit, :update]
-  # resources :creatures with :update is equivalent to adding BOTH:
-  # patch "/creatures/:id", to: "creatures#update"
-  # AND
+  root to: "creatures#index"
+
+  resources :creatures, only: [:index, :new, :create, :show, :edit, :update]
+
+  # resources :creatures, only: [:index, :new, :create, :show, :edit, :update] is equivalent to:
+  # get "/creatures", to: "creatures#index"
+  # get "/creatures/new", to: "creatures#new"
+  # post "/creatures", to: "creatures#create"
+  # get "/creatures/:id", to: "creatures#show"
+  # get "/creatures/:id/edit", to: "creatures#edit"
   # put "/creatures/:id", to: "creatures#update"
+  # patch "/creatures/:id", to: "creatures#update"
 end
 ```
 
 Run `rake routes` in the Terminal to see the newly created update routes.
 
-In the `CreaturesController`, create an `update` action.
+#### 5. Set up the creatures `update` action
+
+In the `CreaturesController`, define an `update` method:
 
 ```ruby
+#
 # app/controllers/creatures_controller.rb
+#
 
 class CreaturesController < ApplicationController
 
-  # keep your other methods and add:
+  ...
+
   # update a creature in the database
   def update
-    # save the id paramater from the url
+    # get the creature id from the url params
     creature_id = params[:id]
-    # find the creature to update by id
-    creature = Creature.find(creature_id)
 
-    # get updated creature data from params
-    updated_attributes = params.require(:creature).permit(:name, :description)
+    # use `creature_id` to find the creature in the database
+    # and save it to an instance variable
+    creature = Creature.find_by_id(creature_id)
+
+    # whitelist params and save them to a variable
+    creature_params = params.require(:creature).permit(:name, :description)
+
     # update the creature
-    creature.update_attributes(updated_attributes)
-
-    # redirect to single creature show page for this creature
-    redirect_to creature
-    # ^ same as redirect_to creature_path(creature)
-    # ^ same as redirect_to "/creatures/#{creature.id}"
+    creature.update_attributes(creature_params)
+    
+    # redirect to show page for the updated creature
+    redirect_to creature_path(creature)
+    # redirect_to creature_path(creature) is equivalent to:
+    # redirect_to "/creatures/#{creature.id}"
   end
+
 end
 ```
 
-Test your update in the browser by editing the creature with an `id` of 1 (go to `/creatures/1/edit`). Then, make another git commit.
+Test your `creatures#update` method in the browser by editing the creature with an `id` of 1 (go to `localhost:3000/creatures/1/edit`). Then, `git add` and `git commit` your work.
 
+## Part IV: Delete a creature with `destroy` (database)
 
+#### 1. Define a route to `destroy` a specific creature
 
-## Part IV: Delete a Creature with Delete/Destory
-
-#### 1. Destroy
-
-Following a similar pattern to the above, we have Rails `resources` create a route to destroy (delete) a specific record based on its `id`.  The RESTful route it creates is `DELETE /creatures/:id`.
+Following a similar pattern to our other routes, Rails `resources` will generate a route to `destroy` (delete) a specific creature based on its `id`. The RESTful route it creates is `DELETE /creatures/:id`.
 
 ```ruby
-
-#/config/routes.rb
+#
+# config/routes.rb
+#
 
 Rails.application.routes.draw do
-  root to: 'creatures#index'
-  resources :creatures, only: [:index, :new, :show, :create, :edit, :update, :destroy]
-  # resources :creatures with :destroy is equivalent to adding:
+  root to: "creatures#index"
+
+  resources :creatures, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+
+  # resources :creatures, only: [:index, :new, :create, :show, :edit, :update, :destroy] is equivalent to:
+  # get "/creatures", to: "creatures#index"
+  # get "/creatures/new", to: "creatures#new"
+  # post "/creatures", to: "creatures#create"
+  # get "/creatures/:id", to: "creatures#show"
+  # get "/creatures/:id/edit", to: "creatures#edit"
+  # put "/creatures/:id", to: "creatures#update"
+  # patch "/creatures/:id", to: "creatures#update"
   # delete "/creatures/:id", to: "creatures#destroy"
 end
 ```
