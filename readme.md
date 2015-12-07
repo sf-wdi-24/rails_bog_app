@@ -677,6 +677,12 @@ Visit `localhost:3000/creatures/1` in the browser, and inspect the HTML for the 
 
 At this point, you've created all the RESTful routes, implemented controller actions for each route, and made views for `index`, `show`, `new`, and `edit`. You've also created the `Creature` model in the database and manually tested that everything works.
 
+## Bonus
+
+* Add a Bootstrap `navbar` with links to the homepage (`/`) and the new creatures page (`/creatures/new`). Also link each creature on `creatures#index` to its individual `show` page.
+* Read about <a href="http://guides.rubyonrails.org/active_record_validations.html" target="_blank">Active Record Validations</a>, and add validations to the `Creature` model to make sure a new creature can't be created without a `name` and `description`.
+* Read the docs for the <a href="https://github.com/thoughtbot/paperclip" target="_blank">Paperclip gem</a>, and incorporate it into your Bog App to upload photos of creatures.
+
 ## Submission
 
 Once you've finished the assignment and pushed your work to GitHub, make a pull request from your fork to the original repo.
