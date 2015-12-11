@@ -1,2 +1,16 @@
-<h1>Creatures#new</h1>
-<p>Find me in app/views/creatures/new.html.erb</p>
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+
+    <%= form_for :creature, url: creatures_path do |f| %>
+      <div class="row column log-in-form">
+        <h4 class="text-center">Create a new creature</h4>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder:'Ex: MonkeySmash' %>
+        <%= f.label :description %>
+        <%= f.text_field :description, placeholder:'Smashes everything around' %>
+        <%= f.submit 'Submit', class:'button expanded' %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

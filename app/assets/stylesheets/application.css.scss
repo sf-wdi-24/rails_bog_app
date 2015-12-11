@@ -12,4 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+.log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 3px; }
+
+  img.show-img {
+    display: block;
+    margin: 0 auto; 
+  }

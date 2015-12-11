@@ -1,2 +1,12 @@
-<h1>Creatures#show</h1>
-<p>Find me in app/views/creatures/show.html.erb</p>
+<div class="callout large primary">
+  <div class="column text-center">
+    <h1><%= @creature.name %></h1>
+    <h2 class="subheader"><%= @creature.description %></h2>
+  </div>
+    <div class=" row medium-8 large-7">
+      <div class="blog-post">
+        <img class='show-img' src="http://i.imgur.com/2nLwd.gif" alt="potty"><br>
+        <%= link_to 'Back', creatures_path %>
+      </div>
+    </div>
+</div>
