@@ -1,6 +1,7 @@
+<h1>Bog Creatures</h1>
+<hr>
 <% @creatures.each do |creature| %>
-	<p>
-		<strong>Name:</strong> <%= creature.name %>
-		<strong>Description</strong> <%= creature.description %>
-	</p>
+	<h3><strong>Name:</strong> <%= creature.name %></h3>
+	<h3><strong>Description</strong> <%= creature.description %></h3>
+	<hr>
 <% end %>
