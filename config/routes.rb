@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root "creatures#index"
+  root to: "creatures#index"
 
-  # use the resources methody to have Rails make an index route for creatues
-  resources :creatures, only: [:index]
+  # use the resources method to have Rails make an default routes for creatues
+  resources :creatures, only: [:index, :new, :create, :show, :edit, :update]
  
 end

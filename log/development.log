@@ -92,3 +92,592 @@ Started GET "/assets/application.self-c551cfdfcf0623f6c6c9187b892bb50cfcee466d93
 
 
 Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-12 14:00:08 -0800
+
+
+Started GET "/" for ::1 at 2015-12-12 14:15:09 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.9ms)[0m  [1mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 78ms (Views: 70.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 14:15:10 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 14:15:10 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 14:15:10 -0800
+
+
+Started GET "/assets/application.self-c551cfdfcf0623f6c6c9187b892bb50cfcee466d93facdb1f0f1a15721ab3d06.css?body=1" for ::1 at 2015-12-12 14:15:10 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 14:15:10 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-12 14:15:10 -0800
+
+
+Started GET "/" for ::1 at 2015-12-12 14:26:23 -0800
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.5ms)[0m  SELECT "creatures".* FROM "creatures"
+  Rendered creatures/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 68ms (Views: 63.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 14:26:23 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 14:26:23 -0800
+
+
+Started GET "/assets/application.self-c551cfdfcf0623f6c6c9187b892bb50cfcee466d93facdb1f0f1a15721ab3d06.css?body=1" for ::1 at 2015-12-12 14:26:23 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 14:26:23 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 14:26:23 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-12 14:26:23 -0800
+
+
+Started GET "/" for ::1 at 2015-12-12 14:26:29 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 14:26:29 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 14:26:29 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 14:26:29 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 14:26:29 -0800
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:26:45 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:13:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.7ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (110.1ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:31:50 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:13:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (91.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:33:56 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.7ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (95.4ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:34:00 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.5ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:34:56 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:5: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (48.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (95.6ms)
+
+
+Started GET "/" for ::1 at 2015-12-12 14:35:02 -0800
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.1ms)[0m  SELECT "creatures".* FROM "creatures"
+  Rendered creatures/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 36.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 14:35:02 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 14:35:02 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 14:35:02 -0800
+
+
+Started GET "/assets/application.self-c551cfdfcf0623f6c6c9187b892bb50cfcee466d93facdb1f0f1a15721ab3d06.css?body=1" for ::1 at 2015-12-12 14:35:02 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 14:35:02 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-12 14:35:02 -0800
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:38:28 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.1ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:47:59 -0800
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/controllers/creatures_controller.rb:35: syntax error, unexpected ':', expecting keyword_end
+		render: show
+		       ^):
+  app/controllers/creatures_controller.rb:35: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.4ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:49:24 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (88.2ms)
+
+
+Started GET "/" for ::1 at 2015-12-12 14:50:31 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 14:50:31 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 14:50:31 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 14:50:31 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 14:50:31 -0800
+
+
+Started GET "/assets/application.self-c551cfdfcf0623f6c6c9187b892bb50cfcee466d93facdb1f0f1a15721ab3d06.css?body=1" for ::1 at 2015-12-12 14:50:31 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-12 14:50:31 -0800
+
+
+Started GET "/creatures/show" for ::1 at 2015-12-12 14:51:29 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 0]]
+  Rendered creatures/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h3><%= @creature.name %></h3>
+    2: <p><%= @creature.description %></p>
+  app/views/creatures/show.html.erb:1:in `_app_views_creatures_show_html_erb__854378981985089750_70357277647680'
+  app/controllers/creatures_controller.rb:36:in `show'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (91.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-12 14:51:38 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:51:42 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.9ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.5ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:52:16 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.7ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 14:59:32 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.7ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.5ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 15:18:17 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+SyntaxError (/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+'.freeze;@output_buffer.append=( end );@output_buffer.to_s
+                                    ^
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/davesloan/develop/rails_bog_app/app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/creatures/new.html.erb:6: syntax error, unexpected keyword_end
+  app/views/creatures/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/creatures/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/creatures_controller.rb:14:in `new'
+
+
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.6ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/davesloan/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.8ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-12 15:18:34 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 15:18:34 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 15:18:34 -0800
+
+
+Started GET "/assets/application.self-c551cfdfcf0623f6c6c9187b892bb50cfcee466d93facdb1f0f1a15721ab3d06.css?body=1" for ::1 at 2015-12-12 15:18:35 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 15:18:35 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 15:18:35 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-12 15:18:35 -0800
+
+
+Started GET "/" for ::1 at 2015-12-12 15:18:51 -0800
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"
+  Rendered creatures/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 15:18:51 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 15:18:51 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 15:18:51 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 15:18:51 -0800
+
+
+Started GET "/creatures/1/edit" for ::1 at 2015-12-12 15:19:12 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered creatures/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 15:19:12 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 15:19:12 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 15:19:12 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 15:19:12 -0800
+
+
+Started GET "/creatures/1/edit" for ::1 at 2015-12-12 15:26:49 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered creatures/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 50ms (Views: 40.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 15:26:50 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 15:26:50 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 15:26:50 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 15:26:50 -0800
