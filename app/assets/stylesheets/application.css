@@ -14,3 +14,14 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background-color: #000000;
+	color: #ffff00;
+}
+
+.list {
+	border: 2px solid #FFFFFF;
+	margin: 20px;
+	padding: 5px;
+}
