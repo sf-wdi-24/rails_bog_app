@@ -1,0 +1,6 @@
+<!-- #this should be the new form -->
+<%= form_for @creature do |f| %>
+	<%= f.text_field :name %>
+	<%= f.text_area :description %>
+	<%= f.submit "Save Creature" %>
+<%= end %>
