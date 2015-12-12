@@ -79,5 +79,22 @@ class CreaturesController < ApplicationController
 		# redirect_to "/creatures/#{creature.id"
 	end
 
+	# delete a creature from the database
+	def destroy
+		# get the creature id from the url params
+		creature_id = params[:id]
 
+		# use 'creature_id' to find the creature in the database
+		# and save it to an instance variable
+		creature = Creature.find_by_id(creature_id)
+
+		# destroy the creature
+		creature.destroy
+
+		# redirect to creatures index
+		redirect_to creatures_path
+		# redirect_to creatures_path is equivalent to:
+		# redirect_to "/creatures"
+	end
+	
 end
