@@ -1189,3 +1189,331 @@ Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44d
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-11 15:43:58 -0800
+
+
+Started GET "/creatures/3/edit" for ::1 at 2015-12-11 15:51:43 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered creatures/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 40ms (Views: 34.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/creatures/3" for ::1 at 2015-12-11 15:51:57 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"of2KgN1wszlb+6pVqQUu8NdkrTn2yX6UqFdXHXKXGrIP9jVR8RA2/SS+KiMtGAOEDxuSjXw+WJZdKtdersO3jQ==", "creature"=>{"name"=>"Yoda2", "description"=>"Giant green man"}, "commit"=>"Save Creature", "id"=>"3"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "creatures" SET "name" = ?, "description" = ?, "updated_at" = ? WHERE "creatures"."id" = ?[0m  [["name", "Yoda2"], ["description", "Giant green man"], ["updated_at", "2015-12-11 23:51:57.852532"], ["id", 3]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.4ms)
+
+ActionView::MissingTemplate (Missing template /creatures.3 with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Trung/develop/rails_bog_app/app/views"
+):
+  app/controllers/creatures_controller.rb:49:in `update'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (49.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.6ms)
+
+
+Started PATCH "/creatures/3" for ::1 at 2015-12-11 15:53:58 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"of2KgN1wszlb+6pVqQUu8NdkrTn2yX6UqFdXHXKXGrIP9jVR8RA2/SS+KiMtGAOEDxuSjXw+WJZdKtdersO3jQ==", "creature"=>{"name"=>"Yoda2", "description"=>"Giant green man"}, "commit"=>"Save Creature", "id"=>"3"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms)
+
+ActionView::MissingTemplate (Missing template creatures/3 with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Trung/develop/rails_bog_app/app/views"
+):
+  app/controllers/creatures_controller.rb:49:in `update'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (51.1ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (39.0ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.9ms)
+
+
+Started PATCH "/creatures/3" for ::1 at 2015-12-11 15:54:22 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"of2KgN1wszlb+6pVqQUu8NdkrTn2yX6UqFdXHXKXGrIP9jVR8RA2/SS+KiMtGAOEDxuSjXw+WJZdKtdersO3jQ==", "creature"=>{"name"=>"Yoda2", "description"=>"Giant green man"}, "commit"=>"Save Creature", "id"=>"3"}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/creatures/3
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/creatures/3" for ::1 at 2015-12-11 15:54:22 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered creatures/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-11 15:54:22 -0800
+
+
+Started GET "/creatures/3/edit" for ::1 at 2015-12-11 15:55:45 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered creatures/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 48ms (Views: 41.5ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/creatures/3" for ::1 at 2015-12-11 15:56:04 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5Uy0jPBMzx8UTsbHLyUqQ9ODJGv8kI8qTjlDSTi+MixLRwtd3CxK22sLRrGrOAc3C/wb33ZnqSi7RMMK5OqfEw==", "creature"=>{"name"=>"Yoda2", "description"=>"Giant blue man"}, "commit"=>"Save Creature", "id"=>"3"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+NameError (undefined local variable or method `creature' for #<CreaturesController:0x007fc782444020>):
+  app/controllers/creatures_controller.rb:47:in `update'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.5ms)
+
+
+Started GET "/creatures/3/edit" for ::1 at 2015-12-11 15:56:25 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered creatures/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 34.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/creatures/3" for ::1 at 2015-12-11 15:56:32 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EYBOvvJEr1wDbc/xHQhll4CQl5PE1FshQ9XM98YZn5W/i/Fv3iQqmHwoT4eZFUjjWO+oJ04jfSO2qEy0Gk0yqg==", "creature"=>{"name"=>"Yoda2", "description"=>"Giant red man"}, "commit"=>"Save Creature", "id"=>"3"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "creatures" SET "description" = ?, "updated_at" = ? WHERE "creatures"."id" = ?[0m  [["description", "Giant red man"], ["updated_at", "2015-12-11 23:56:32.237288"], ["id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/creatures/3
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/creatures/3" for ::1 at 2015-12-11 15:56:32 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered creatures/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures/3/edit" for ::1 at 2015-12-11 15:56:50 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered creatures/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 33.5ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/creatures/3" for ::1 at 2015-12-11 15:56:56 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6nevSGK4fSM0tHJ3nJLBwbS2GwHOkSs5bSnG9SILFm1EfBCZTtj450vx8gEYj+y1bMkktURmDTuYVEa2/l+7Ug==", "creature"=>{"name"=>"Yoda3", "description"=>"Giant red man"}, "commit"=>"Save Creature", "id"=>"3"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "creatures" SET "name" = ?, "updated_at" = ? WHERE "creatures"."id" = ?[0m  [["name", "Yoda3"], ["updated_at", "2015-12-11 23:56:56.411282"], ["id", 3]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.4ms)
+
+NameError (undefined local variable or method `creature' for #<CreaturesController:0x007fc785e7cf58>):
+  app/controllers/creatures_controller.rb:49:in `update'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (40.1ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.6ms)
+
+
+Started PATCH "/creatures/3" for ::1 at 2015-12-11 15:57:06 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6nevSGK4fSM0tHJ3nJLBwbS2GwHOkSs5bSnG9SILFm1EfBCZTtj450vx8gEYj+y1bMkktURmDTuYVEa2/l+7Ug==", "creature"=>{"name"=>"Yoda3", "description"=>"Giant red man"}, "commit"=>"Save Creature", "id"=>"3"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/creatures/3
+Completed 302 Found in 35ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/creatures/3" for ::1 at 2015-12-11 15:57:06 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered creatures/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-11 15:57:06 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-11 15:57:06 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-12-11 15:57:06 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-11 15:57:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-11 15:57:06 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-11 15:57:07 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-11 15:57:07 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-11 15:57:07 -0800
+
+
+Started GET "/creatures/4" for ::1 at 2015-12-11 15:59:48 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered creatures/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures/4/edit" for ::1 at 2015-12-11 15:59:55 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered creatures/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/creatures/4" for ::1 at 2015-12-11 16:00:24 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EVIMRS+ID77lzJV09Muur1xiWfKdPuk8HsuxOLhgZLO/WbOUA+iKepqJFQJw1oPbhB1mRhfJzz7rtjF7ZDTJjA==", "creature"=>{"name"=>"Luke2", "description"=>"Jedi2"}, "commit"=>"Save Creature", "id"=>"4"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "creatures" SET "name" = ?, "description" = ?, "updated_at" = ? WHERE "creatures"."id" = ?[0m  [["name", "Luke2"], ["description", "Jedi2"], ["updated_at", "2015-12-12 00:00:24.475411"], ["id", 4]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/creatures/4
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/creatures/4" for ::1 at 2015-12-11 16:00:24 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered creatures/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures/4" for ::1 at 2015-12-11 16:09:47 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered creatures/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 48ms (Views: 42.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-11 16:09:48 -0800
+
+
+Started DELETE "/creatures/4" for ::1 at 2015-12-11 16:09:51 -0800
+Processing by CreaturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vZ74NuD5pf210onhxR1BlImNt4A57k3rmf/SCEGAYY8TlUfnzJkgOcqXCZdBAGzgUfKINLMZa+lsglJLndTMsA==", "id"=>"4"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "creatures" WHERE "creatures"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/creatures
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-11 16:09:51 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.1ms)
