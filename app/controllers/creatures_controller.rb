@@ -37,7 +37,7 @@ class CreaturesController < ApplicationController
   def destroy
     @creature.destroy
     redirect_to root_path
-    flash[:notice] = 'Creature successfully destroyed'
+    flash[:alert] = 'Creature successfully destroyed'
   end
 
 private
@@ -46,7 +46,7 @@ private
   end
 
   def creature_params
-    params.require(:creature).permit(:name, :description)
+    params.require(:creature).permit(:name, :description,:avatar)
   end
 
 end

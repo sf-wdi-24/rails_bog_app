@@ -7,7 +7,7 @@
     <div class=" row medium-8 large-7">
       <div class="blog-post">
         <h3><%= link_to creature.name, creature_path(creature) %></h3>
-        <img src="http://i.imgur.com/2nLwd.gif" alt="potty">
+        <%= image_tag creature.avatar_url(:thumb).to_s %>
         <p><%= creature.description %> 
         <%= link_to 'Edit', edit_creature_path(creature) %>
         <%= link_to 'Delete', creature_path(creature), method: :delete %>

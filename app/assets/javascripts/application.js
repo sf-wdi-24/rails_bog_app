@@ -16,4 +16,9 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); 
+  console.log('meow')
+
+  //flash message fade out after 3 secs
+  $('#flashMsg').delay(3000).fadeOut('slow')
+});
