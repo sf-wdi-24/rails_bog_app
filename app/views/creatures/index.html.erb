@@ -3,5 +3,6 @@
 <% @creatures.each do |creature| %>
 	<h3><strong>Name:</strong> <%= creature.name %></h3>
 	<h3><strong>Description</strong> <%= creature.description %></h3>
+	<%= link_to "Display Creature", creature_path(creature), class: "btn btn-block btn-success" %>
 	<hr>
 <% end %>
