@@ -51,7 +51,7 @@ class CreaturesController < ApplicationController
     if creature.save
       redirect_to creature_path(creature)
     end 
-
+end
     # update a creature in the db
     def update
       # get the creature id form the url params
@@ -85,7 +85,6 @@ class CreaturesController < ApplicationController
       redirect_to creatures_path
   end
 
-end
 
 
 
