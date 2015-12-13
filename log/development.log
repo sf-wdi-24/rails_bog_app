@@ -10351,3 +10351,134 @@ Processing by CreaturesController#index as */*
   [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
   Rendered creatures/index.html.erb within layouts/application (2.7ms)
 Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 00:10:11 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/" for ::1 at 2015-12-13 00:10:11 -0800
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-13 00:10:11 -0800
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2015-12-13 00:10:12 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 00:10:12 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 00:10:12 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 00:10:12 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 00:10:12 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 00:10:12 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 00:10:12 -0800
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-13 00:10:19 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2015-12-13 00:17:22 -0800
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z09CMpxGM7j+aE+pt4JtQj//JmXfz2exBTMFKGrMWZjJRP3jsCa2fIEtz98zn0A254AZ0VU4QbPwToVrtpj0pw==", "creature"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fed363006d0 @tempfile=#<Tempfile:/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/RackMultipart20151213-87655-pob2ys.jpg>, @original_filename="jabba_the_hut.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"creature[image]\"; filename=\"jabba_the_hut.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Jabba The Hutt", "description"=>"Jabba was a major figure on Tatooine, where he controlled the bulk of the trafficking in illegal goods, piracy and slavery that generated most of the planet's wealth."}, "commit"=>"Save"}
+Command :: file -b --mime '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1mz7qbt.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1iftg7d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1iftg7d.jpg[0]'
+Command :: convert '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1iftg7d.jpg[0]' -auto-orient -resize "600x600>" '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/1fa57dcd052534097843249caeb44c2b20151213-87655-u8mwuz'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1iftg7d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1iftg7d.jpg[0]'
+Command :: convert '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1iftg7d.jpg[0]' -auto-orient -resize "150x" -crop "150x150+0+0" +repage '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/1fa57dcd052534097843249caeb44c2b20151213-87655-1cwcf7w'
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-s4s0gu.jpg'
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered creatures/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 203ms (Views: 53.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 00:28:13 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.3ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 40ms (Views: 35.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-13 00:28:16 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2015-12-13 00:28:27 -0800
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V5YkOPo+WGNflUVFtID65VO3ZCjRRSxdJpTjCnydam/5nZvp1l7dpyDQxTMwndeRi8hbnFuyCl/T6WNJoMnHUA==", "creature"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fed376fe9c0 @tempfile=#<Tempfile:/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/RackMultipart20151213-87655-524chy.jpg>, @original_filename="jabba_the_hut.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"creature[image]\"; filename=\"jabba_the_hut.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name"=>"Jabba The Hutt", "description"=>"Jabba was a major figure on Tatooine, where he controlled the bulk of the trafficking in illegal goods, piracy and slavery that generated most of the planet's wealth."}, "commit"=>"Save"}
+Command :: file -b --mime '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1hgs7z4.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1wuhzkj.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1wuhzkj.jpg[0]'
+Command :: convert '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1wuhzkj.jpg[0]' -auto-orient -resize "600x600>" '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/5b09baa3b5871dd21082d65e0d513d4e20151213-87655-acvznz'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1wuhzkj.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1wuhzkj.jpg[0]'
+Command :: convert '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1wuhzkj.jpg[0]' -auto-orient -resize "150x" -crop "150x150+0+0" +repage '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/5b09baa3b5871dd21082d65e0d513d4e20151213-87655-xfaly3'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/s4/493nxdls2dq6sgn6bxy749_00000gn/T/c4826507e14620d59fbe5a3b8d41a2c520151213-87655-1t4ahwt.jpg'
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "creatures" ("image_file_name", "image_content_type", "image_file_size", "image_updated_at", "name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["image_file_name", "jabba_the_hut.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 49718], ["image_updated_at", "2015-12-13 08:28:27.863271"], ["name", "Jabba The Hutt"], ["description", "Jabba was a major figure on Tatooine, where he controlled the bulk of the trafficking in illegal goods, piracy and slavery that generated most of the planet's wealth."], ["created_at", "2015-12-13 08:28:28.001217"], ["updated_at", "2015-12-13 08:28:28.001217"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/creatures/24
+Completed 302 Found in 162ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/creatures/24" for ::1 at 2015-12-13 00:28:28 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mCreature Load (0.3ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 24]]
+  Rendered creatures/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 00:28:30 -0800
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.2ms)
