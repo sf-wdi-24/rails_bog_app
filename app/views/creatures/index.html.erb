@@ -1,8 +1,9 @@
 <h1>All Creatures</h1>
 
 <!-- creatures is the parameters to go through the loop. Similar to for each loop in JS. The block is telling us to go through the list of creatures -->
-<% @creatures.each do |creature| %> 
-	<%= creature.name %> 
-	<%= creature.description %>
-	<%= time_ago_in_words(creature.created_at) %>
-<% end %> 
+<% @creatures.each do |creature| %>
+  <p>
+    <strong>Name:</strong> <%= creature.name %><br>
+    <strong>Description:</strong> <%= creature.description %>
+  </p>
+<% end %>
