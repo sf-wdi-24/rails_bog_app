@@ -1,2 +1,7 @@
-<h1>Creatures#new</h1>
-<p>Find me in app/views/creatures/new.html.erb</p>
+<h1>New Creatures</h1>
+<br>
+<%= form_for :creature, url: "/creatures", method: "post" do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.submit "Save Creature" %>
+<% end %>

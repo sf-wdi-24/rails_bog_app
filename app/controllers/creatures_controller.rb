@@ -11,7 +11,10 @@ class CreaturesController < ApplicationController
 
   end
 
+  # show the new creature form
   def new
+    @creature = Creature.new
+    render :new
   end
 
   def show
@@ -19,4 +22,26 @@ class CreaturesController < ApplicationController
 
   def edit
   end
+
+  # show new creature in db
+  def create
+    # whitelist params and save to a variable
+    creature_params = params.require(:creature).permit(:name, :description)
+
+    # create new creature
+    creature = Creature.new(creature_params)
+
+    # after saving,redirect to route that displays all creatures
+    if creature.save
+      redirect_to creatures_path
+    end 
+
+  end 
+
+
+
+
+
+
+
 
