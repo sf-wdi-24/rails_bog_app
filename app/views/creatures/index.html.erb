@@ -1,6 +1,8 @@
+<h1>All Creatures are listed here</h1>
+<hr>
 <% @creatures.each do |creature| %>
 	<p>
 		<strong>Name:</strong> <%= creature.name %><br>
-		<strong>Description:</strong> <% creature.description %>
+		<strong>Description:</strong> - <%= creature.description %> - <%= time_ago_in_words(creature.created_at) %> ago
 	</p>
 	<% end %>
