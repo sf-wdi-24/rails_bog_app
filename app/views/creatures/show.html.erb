@@ -14,9 +14,8 @@
 				<hr>
 			</div>
 			<br>
-			<div class="text-center">
-				<a href="/"><button class="btn btn-info">Back to List</button></a>
-			</div>
+			<%= button_to "Delete", @creature, method: :delete, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
+			<a href="/"><button class="btn btn-info pull-laef">Back to List</button></a>
 		</div>
 	</div>
 </div>
