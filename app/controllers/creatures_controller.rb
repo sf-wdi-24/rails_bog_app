@@ -16,7 +16,7 @@ class CreaturesController < ApplicationController
 	#adding a CREATE route
 	def create
 		# hm this line is defining the params?
-		creature_params = params.require(:creature).permit(:name, :description)
+		creature_params = params.require(:creature).permit(:name, :description, :image)
 		# new creature
 		creature = Creature.new(creature_params)
 		# if creature saves, redirect to route that displays all creatures
@@ -52,7 +52,7 @@ class CreaturesController < ApplicationController
 		creature = Creature.find_by_id(creature_id)
 
 		#save params to a variable
-		creature_params = params.require(:creature).permit(:name, :description)
+		creature_params = params.require(:creature).permit(:name, :description, :image)
 
 		#update the creature
 		creature.update_attributes(creature_params)
@@ -70,5 +70,5 @@ class CreaturesController < ApplicationController
 		#redirect to creatures index
 		redirect_to creatures_path
 	end
-	
+
 end
