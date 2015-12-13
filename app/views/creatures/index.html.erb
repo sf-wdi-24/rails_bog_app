@@ -23,7 +23,7 @@
             <li class="inline">
               <%= link_to "Edit", edit_creature_path(creature), data:{:"reveal-id" => "editCreatureModal", :"reveal-ajax" => true}, class:"right button tiny warning" %>
             </li>
-            <div id="editCreatureModal" class="reveal-modal medium" data-reveal>
+            <div id="editCreatureModal" class="reveal-modal" data-reveal>
               <%= render "partials/editCreature" %>
               <a class="close-reveal-modal">&#215;</a>
             </div>
