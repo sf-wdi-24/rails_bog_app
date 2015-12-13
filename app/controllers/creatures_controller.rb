@@ -2,7 +2,7 @@ class CreaturesController < ApplicationController
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
 
   def index
-    @creatures = Creature.all
+    @creatures = Creature.all.order(created_at: :desc)
   end
 
   def show
