@@ -3,6 +3,6 @@
 <% @creatures.each do |creature| %>
 	<p>
 		<strong>Name:</strong> <%= creature.name %><br>
-		<strong>Description:</strong> - <%= creature.description %> - <%= time_ago_in_words(creature.created_at) %> ago
+		<strong>Description:</strong> - <%= creature.description %> - <%= time_ago_in_words(creature.created_at) %> ago <%= link_to "Profile", @creature %>
 	</p>
 	<% end %>
