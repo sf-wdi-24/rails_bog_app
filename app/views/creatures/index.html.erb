@@ -1,3 +1,6 @@
+<%= render 'partials/navPartial' %>
+<%= render 'partials/flashMsg' %>
+
 <div class="callout large primary">
   <div class="column text-center">
     <h1>Scary Creatures</h1>
@@ -15,11 +18,15 @@
         <div class="menu simple">
           <ul>
             <li class="inline">
-              <%= link_to 'Delete', creature_path(creature), method: :delete, class:'right button tiny alert' %>
+              <%= link_to "Delete", creature_path(creature), method: :delete, class:"right button tiny warning" %>
             </li>
             <li class="inline">
-              <%= link_to 'Edit', edit_creature_path(creature), class:'right button tiny' %>
+              <%= link_to "Edit", edit_creature_path(creature), data:{:"reveal-id" => "editCreatureModal", :"reveal-ajax" => true}, class:"right button tiny warning" %>
             </li>
+            <div id="editCreatureModal" class="reveal-modal medium" data-reveal>
+              <%= render "partials/editCreature" %>
+              <a class="close-reveal-modal">&#215;</a>
+            </div>
           </ul>   
         </div>
       </div>

@@ -15,7 +15,10 @@
  *= require foundation_and_overrides
 
  */
-
+$gray-color: #444;
+body {
+  background-color: #E8E8E8 ;
+}
 h1, 
 h2, 
 li,
@@ -63,11 +66,29 @@ p.description {
   opacity: 1;
 }
 
+a {
+  transition: color 0.5s ease;
+}
+a:hover {
+  color: red !important;
+}
 
-
-
-
-
+.button:hover {
+  color: white !important;
+}
+h3 a {
+  color: $gray-color;
+}
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: $gray-color;
+  content: ' ';
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 2px;
+  padding: 0;
+}
 
 
 

@@ -16,7 +16,7 @@ class CreaturesController < ApplicationController
     @creature = Creature.new(creature_params)
     if @creature.save
       redirect_to root_path
-      flash[:notice] = 'New creature created'
+      flash[:notice] = "New creature created"
     else
       render :new
     end
@@ -28,7 +28,7 @@ class CreaturesController < ApplicationController
   def update
     if @creature.update(creature_params)
       redirect_to creature_path(@creature)
-      flash[:notice] = 'Creature updated'
+      flash[:notice] = "Creature updated"
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class CreaturesController < ApplicationController
   def destroy
     @creature.destroy
     redirect_to root_path
-    flash[:alert] = 'Creature successfully destroyed'
+    flash[:alert] = "Creature successfully destroyed"
   end
 
 private

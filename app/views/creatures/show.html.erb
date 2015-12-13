@@ -1,3 +1,5 @@
+<%= render 'partials/navPartial' %>
+
 <div class="callout large primary">
   <div class="column text-center">
     <h1><%= @creature.name %></h1>
@@ -6,7 +8,7 @@
     <div class=" row medium-8 large-7">
       <div class="blog-post">
         <%= image_tag @creature.avatar_url(:thumb).to_s %> <br>
-        <%= link_to 'Back', creatures_path %>
+        <%= link_to "Back", creatures_path %>
       </div>
     </div>
 </div>

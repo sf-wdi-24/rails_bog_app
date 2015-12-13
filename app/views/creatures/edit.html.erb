@@ -1,16 +1,1 @@
-<div class="row">
-  <div class="medium-6 medium-centered large-4 large-centered columns">
-
-    <%= form_for :creature, url: creature_path(@creature), method: :patch do |f| %>
-      <div class="row column log-in-form">
-        <h4 class="text-center">Edit the creature</h4>
-        <%= f.label :name %>
-        <%= f.text_field :name, placeholder:'Ex: MonkeySmash' %>
-        <%= f.label :description %>
-        <%= f.text_field :description, placeholder:'Smashes everything around' %>
-        <%= f.submit 'Update', class:'button expanded' %>
-      </div>
-    <% end %>
-
-  </div>
-</div>
+<%= render "partials/editCreature" %>
