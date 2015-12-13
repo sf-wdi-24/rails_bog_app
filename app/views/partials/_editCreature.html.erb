@@ -3,12 +3,13 @@
 
     <%= form_for :creature, url: creatures_path(@creature), method: :patch do |f| %>
       <div class="row column log-in-form">
-        <h4 class="text-center">Edit the creature</h4>
+        <h3 class="text-center">Edit the creature</h3>
         <%= f.label :name %>
         <%= f.text_field :name, placeholder:"Ex: MonkeySmash" %>
         <%= f.label :description %>
-        <%= f.text_field :description, placeholder:"Smashes everything around" %>
-        <%= f.submit "Update", class:"button expanded" %>
+        <%= f.text_area :description, placeholder:"Smashes everything around" %>
+        <%= f.file_field :avatar %>
+        <%= f.submit "Update", class:"button expanded small warning" %>
       </div>
     <% end %>
 
