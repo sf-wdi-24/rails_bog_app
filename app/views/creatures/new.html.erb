@@ -1,4 +1,13 @@
-<%= form_for @creature do |f| %>
+<%= form_for @creature, html: { multipart: true } do |f| %>
+	<% if @creature.errors.any? %>
+		<h2>Errors:</h2>
+		<ul>
+			<% @creature.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= f.file_field :image %>
 	<%= f.text_field :name %>
 	<%= f.text_area :description %>
 	<%= f.submit "Save Creature" %>
