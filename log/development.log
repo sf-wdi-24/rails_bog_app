@@ -4008,3 +4008,152 @@ Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44d
 
 
 Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-12 22:14:54 -0800
+
+
+Started GET "/creatures/1/edit" for ::1 at 2015-12-12 23:55:56 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendered creatures/edit.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Editing a Creature</h1>
+    2: <%= form_for @creature do |f| %>
+    3:   <%= f.text_field :name %>
+    4:   <%= f.text_area :description %>
+    5:   <%= f.submit "Save Creature" %>
+  app/views/creatures/edit.html.erb:2:in `_app_views_creatures_edit_html_erb___3581295321920163358_70252989990380'
+
+
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.3ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (289.2ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (202.3ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (407.5ms)
+
+
+Started GET "/creatures/1/edit" for ::1 at 2015-12-12 23:56:37 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendered creatures/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 463ms (Views: 462.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/assets/application.self-e099d29ef42e52a8ed8d4bf5e032fed296ad2b36f4609e999e970121a531acb2.css?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-12 23:56:38 -0800
+
+
+Started GET "/creatures/1/edit" for ::1 at 2015-12-13 00:01:52 -0800
+
+SyntaxError (/Users/anilpanicker/develop/rails_bog_app/app/controllers/creatures_controller.rb:84: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/creatures_controller.rb:84: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (160.2ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (123.5ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/anilpanicker/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (336.3ms)
+
+
+Started GET "/creatures/1/edit" for ::1 at 2015-12-13 00:02:03 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendered creatures/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 161ms (Views: 160.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/assets/application.self-e099d29ef42e52a8ed8d4bf5e032fed296ad2b36f4609e999e970121a531acb2.css?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 00:02:04 -0800
+
+
+Started GET "/" for ::1 at 2015-12-13 00:02:06 -0800
+Processing by CreaturesController#index as HTML
+  [1m[36mCreature Load (0.7ms)[0m  [1mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 165ms (Views: 110.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/creatures/1/edit" for ::1 at 2015-12-13 00:02:30 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendered creatures/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 00:02:30 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-13 00:02:30 -0800
+
+
+Started GET "/assets/application.self-e099d29ef42e52a8ed8d4bf5e032fed296ad2b36f4609e999e970121a531acb2.css?body=1" for ::1 at 2015-12-13 00:02:30 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 00:02:30 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 00:02:30 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 00:02:30 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 00:02:30 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 00:02:30 -0800
