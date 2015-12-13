@@ -1,6 +1,5 @@
-<h1>Creature Gallery</h1>
+<h3><strong>Creature: </strong> <%= @creature.name %></h3>
 <hr>
-<h3><%= @creature.name %></h3>
-<p><%= @creature.description %></p>
-<%= button_to "Delete", @creature, method: :delete , class: "btn btn-danger btn-info" %>
+<p><strong>Descrption: </strong><%= @creature.description %></p>
+<%= button_to "Delete", @creature, method: :delete , class: "btn-sm btn-danger btn-info" %>
 
