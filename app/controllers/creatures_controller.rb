@@ -1,7 +1,7 @@
 class CreaturesController < ApplicationController
 	#display all creatures
 	def index
-		@creatures = Creature.all
+		@creatures = Creature.all.order(:name)
 		render :index
 	end
 
