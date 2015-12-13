@@ -17,7 +17,15 @@ class CreaturesController < ApplicationController
     render :new
   end
 
+  # display a specific creature
   def show
+    # get the creature id from the url params
+    creature_id = params[:id]
+    # use "creature_id" to find the creature in db and save to instance variable
+    @creature = Creature.find_by_id(creature_id)
+
+    # render the show view(it has access to instance variable)
+    render :show
   end
 
   def edit
@@ -31,9 +39,9 @@ class CreaturesController < ApplicationController
     # create new creature
     creature = Creature.new(creature_params)
 
-    # after saving,redirect to route that displays all creatures
+    # after saving,redirect to route that displays ONLY the new created creature
     if creature.save
-      redirect_to creatures_path
+      redirect_to creature_path(creature)
     end 
 
   end 
