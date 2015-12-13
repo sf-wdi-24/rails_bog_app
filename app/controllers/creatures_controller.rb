@@ -16,11 +16,14 @@ class CreaturesController < ApplicationController
 		#whitelist params and save them to variable
 		creature_params = params.require(:creature).permit(:name, :description)
 		#create a new creature from creature_params
-		creature = Creature.new(creature_params)
-		if creature.save
-			redirect_to creature_path(creature)
-			# redirect_to creatures_path
-			# creatures_path is equivalent to "/creatures"
+		@creature = Creature.new(creature_params)
+		if @creature.save
+			redirect_to creature_path(@creature)
+			#redirect_to "/creatures/#{creature.id}"
+			
+		else
+			#this is when error happens, render new form again to show error
+			render :new
 		end
 	end	
 
@@ -42,11 +45,16 @@ class CreaturesController < ApplicationController
 
 	def update
 		creature_id = params[:id]
-		creature = Creature.find_by_id(creature_id)
+		@creature = Creature.find_by_id(creature_id)
 		creature_params = params.require(:creature).permit(:name, :description)
-		creature.update_attributes(creature_params)
-
-		redirect_to creature_path(creature)
+		@creature.update_attributes(creature_params)
+		if @creature.errors.any?
+			#if error happen when edit, render edit form again to show error
+			render :edit
+		else 
+			redirect_to creature_path(@creature)
+			#redirect_to "/creatures/#{creature.id}"
+		end
 	end
 
 	def destroy

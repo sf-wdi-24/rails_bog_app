@@ -1,6 +1,29 @@
-<% @creatures.each do |creature| %>
-	<p>
-		<strong>Name:</strong> <%= creature.name %>
-		<strong>Description:</strong> <%= creature.description %>
-	</p>
-<% end %>
+<div class="containter">
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
+			<h1 class="text-center">Welcome to Monster's World</h1>
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+							<% @creatures.each do |creature| %>
+								<tr>
+									<td><%= creature.name %></td>
+									<td><%= creature.description %></td>
+								</tr>
+							<% end %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
