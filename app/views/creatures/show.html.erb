@@ -5,7 +5,7 @@
   </div>
     <div class=" row medium-8 large-7">
       <div class="blog-post">
-        <img class='show-img' src="http://i.imgur.com/2nLwd.gif" alt="potty"><br>
+        <%= image_tag @creature.avatar_url(:thumb).to_s %> <br>
         <%= link_to 'Back', creatures_path %>
       </div>
     </div>

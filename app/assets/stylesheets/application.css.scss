@@ -16,12 +16,65 @@
 
  */
 
+h1, 
+h2, 
+li,
+.button,
+ul.right,
+a {
+  font-family: 'Unica One', cursive !important;
+}
+p {
+  font-family: 'Josefin Sans', sans-serif;
+}
 .log-in-form {
   border: 1px solid #cacaca;
   padding: 1rem;
   border-radius: 3px; }
 
-  img.show-img {
-    display: block;
-    margin: 0 auto; 
-  }
+img.show-img {
+  display: block;
+}
+
+li.inline {
+  display: block;
+  margin: 0 auto;
+  list-style: none;
+}
+p.description {
+  padding: 20px;
+}
+.photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.photo img {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transform: scale(1.15);
+  transition: transform 0.5s, opacity 0.5s;
+}
+.photo img:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

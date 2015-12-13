@@ -4,15 +4,26 @@
     <h2 class="subheader">So scary</h2>
   </div>
   <% @creatures.each do |creature| %>
-    <div class=" row medium-8 large-7">
-      <div class="blog-post">
-        <h3><%= link_to creature.name, creature_path(creature) %></h3>
+  <div class=" row medium-8 large-7">
+    <div class="blog-post">
+      <h3><%= link_to creature.name, creature_path(creature) %></h3>
+      <figure class="photo">
         <%= image_tag creature.avatar_url(:thumb).to_s %>
-        <p><%= creature.description %> 
-        <%= link_to 'Edit', edit_creature_path(creature) %>
-        <%= link_to 'Delete', creature_path(creature), method: :delete %>
-        </p>
+      </figure>
+      <p class="description"><%= creature.description %></p>
+      <div class="callout">
+        <div class="menu simple">
+          <ul>
+            <li class="inline">
+              <%= link_to 'Delete', creature_path(creature), method: :delete, class:'right button tiny alert' %>
+            </li>
+            <li class="inline">
+              <%= link_to 'Edit', edit_creature_path(creature), class:'right button tiny' %>
+            </li>
+          </ul>   
+        </div>
       </div>
     </div>
+  </div>
   <% end %>
 </div>
