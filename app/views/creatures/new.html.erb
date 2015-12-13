@@ -3,7 +3,7 @@
 		<div class="col-sm-8 col-sm-offset-2">
 			<h1 class="text-center">Create New Creature</h1>
 			<hr>
-			<%= form_for @creature do |f| %>
+			<%= form_for @creature, html: { multipart: true } do |f| %>
 				<% if @creature.errors.any? %>
 					<h3>Errors:</h3>
 					<ul>
@@ -12,17 +12,21 @@
 						<% end %>
 					</ul>
 				<% end %>
-					<form class="form-horizontal" role="form">
-						<div class="form-group">
-							<%= f.text_field :name, class: "form-control", placeholder: "Name" %>
-						</div>
-						<div class="form-group">
-							<%= f.text_area :description, class: "form-control", placeholder: "Description" %>
-						</div>
-						<div class="form-group">
-							<%= f.submit "Save", class:"btn btn-info" %>
-						</div>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<%= f.label :image %>
+						<%= f.file_field :image %>
 					</div>
+					<div class="form-group">
+						<%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+					</div>
+					<div class="form-group">
+						<%= f.text_area :description, class: "form-control", placeholder: "Description" %>
+					</div>
+					<div class="form-group">
+						<%= f.submit "Save", class:"btn btn-info" %>
+					</div>
+				</div>
 			<% end %>
 		</div>
 	</div>

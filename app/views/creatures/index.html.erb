@@ -1,27 +1,26 @@
 <div class="containter">
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
-			<h1 class="text-center">Welcome to Monster's World</h1>
+		<div class="col-sm-8 col-sm-offset-2">
+			<h1 class="text-center">Welcome to Creature's World</h1>
+			<hr>
+			<div class="text-center">
+				<a href="/creatures/new"><button class="btn btn-info">Add More Creature</button></a>
+			</div>
+			<br>
 			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3">
-					<div class="table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-							<% @creatures.each do |creature| %>
-								<tr>
-									<td><%= creature.name %></td>
-									<td><%= creature.description %></td>
-								</tr>
-							<% end %>
-							</tbody>
-						</table>
-					</div>
+				<div class="col-sm-10 col-sm-offset-1">
+					<% @creatures.each do |creature| %>
+						<div class="row">
+							<div class="col-sm-4">
+								<%= image_tag creature.image.url(:thumb) %>
+							</div>
+							<div class="col-sm-8">
+								<h3><strong>Name: </strong><%= creature.name %></h3>
+								<p><strong>Description: </strong><%= creature.description %></p>
+							</div>
+						</div>
+						<hr>
+					<% end %>
 				</div>
 			</div>
 		</div>

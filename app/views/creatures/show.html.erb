@@ -1,12 +1,22 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2">
-			<h1>Your Monster</h1>
+			<h1 class="text-center">Your Creature</h1>
 			<hr>
-			<h4><strong>Name:</strong> <%= @creature.name %></h3>
-			<p><strong>Description: </strong> <%=  @creature.description %></p>
-			<%= button_to "Delete", @creature, method: :delete, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
-			<a href="/"><button class="btn btn-info pull-left">Back to List</button></a>
+			<div class="row">
+				<div class="col-sm-4">
+					<%= image_tag @creature.image.url(:thumb) %>
+				</div>
+				<div class="col-sm-8">
+					<h3><strong>Name: </strong><%= @creature.name %></h3>
+					<p><strong>Description: </strong><%= @creature.description %></p>
+				</div>
+				<hr>
+			</div>
+			<br>
+			<div class="text-center">
+				<a href="/"><button class="btn btn-info">Back to List</button></a>
+			</div>
 		</div>
 	</div>
 </div>

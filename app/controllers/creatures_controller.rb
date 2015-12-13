@@ -14,7 +14,7 @@ class CreaturesController < ApplicationController
 	#create a new creature in the database
 	def create
 		#whitelist params and save them to variable
-		creature_params = params.require(:creature).permit(:name, :description)
+		creature_params = params.require(:creature).permit(:image, :name, :description)
 		#create a new creature from creature_params
 		@creature = Creature.new(creature_params)
 		if @creature.save
@@ -46,7 +46,7 @@ class CreaturesController < ApplicationController
 	def update
 		creature_id = params[:id]
 		@creature = Creature.find_by_id(creature_id)
-		creature_params = params.require(:creature).permit(:name, :description)
+		creature_params = params.require(:creature).permit(:image, :name, :description)
 		@creature.update_attributes(creature_params)
 		if @creature.errors.any?
 			#if error happen when edit, render edit form again to show error
