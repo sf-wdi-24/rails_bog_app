@@ -7,15 +7,14 @@
 			  <tr>
 			    <th>Name</th>
 			    <th>Description</th>
-			    <th></th>
-			    <th></th>
-			    <th></th>
+
 			  </tr>
 			 <!-- creatures is the parameters to go through the loop. Similar to for each loop in JS. The block is telling us to go through the list of creatures -->
 			<% @creatures.each do |creature| %>
 			  <tr>
 			    <td><%= creature.name %></td>
 			    <td><%= creature.description %></td>
+			    <td><%= image_tag creature.image.url(:medium) %></td>
 			    <td><%= link_to "Show", creature %></td>
 			    <td><%= link_to "Edit", edit_creature_path(creature) %></td>
 			    <td><%= link_to "Remove", creature, method: :delete, data: { confirm: "Are you sure?" } %></td>
