@@ -1,9 +1,9 @@
+
+<h1>Welcome to the Bog!</h1>
+<hr>
 <% @creatures.each do |creature| %>
-	<p>
-		<strong>Name:</strong> <% creature.name %><br>
-		<strong>Description:</strong> <% creature.description %>
-	</p>
-
-
-
+  <h4><%= link_to creature.name, creature_path(creature) %></a></h4>
+  <p><%= creature.description %></p>
+  <hr>
 <% end %>
+<%= link_to "Add New Creature", new_creature_path, class: "btn btn-default" %>

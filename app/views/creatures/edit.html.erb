@@ -1,6 +1,10 @@
-<h2>Add a New Creature</h2>
+
+<h2>Edit Creature</h2>
 <hr>
-<%= form_for @creature do |f| %>
+
+  
+  <%= form_for @creature do |f| %>
+
   <div class="form-group">
     <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
   </div>
@@ -10,4 +14,5 @@
   <div class="form-group">
     <%= f.submit "Save Creature", class: "btn btn-block btn-default" %>
   </div>
+  
 <% end %>
