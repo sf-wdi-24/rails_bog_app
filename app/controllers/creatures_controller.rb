@@ -15,6 +15,7 @@ class CreaturesController < ApplicationController
 
   # show the new creature form
    def new
+    @creature = Creature.new
      render :new
    end
 
