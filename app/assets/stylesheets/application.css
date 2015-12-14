@@ -14,3 +14,30 @@
  *= require_tree .
  *= require_self
  */
+body {
+	height: 100%;
+	width: 100%;
+	background: url("http://i.imgur.com/WdJLMuJ.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+
+h1, h3, p, .button-wrapper, img, a {
+ 	padding-left: 10px;
+ 	padding-right: 10px;
+}
+
+h1 {
+	color: white;
+}
+
+.each-creature {
+	background-color: white;
+	padding: 10px;
+}
+
+a {
+	color: #4fabf7;
+}

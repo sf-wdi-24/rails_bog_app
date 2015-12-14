@@ -1,6 +1,6 @@
 <div class="containter">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-10 col-sm-offset-1">
 			<h1 class="text-center">Welcome to Creature's World</h1>
 			<hr>
 			<div class="text-center">
@@ -10,15 +10,18 @@
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
 					<% @creatures.each do |creature| %>
-						<div class="row">
+						<div class="row each-creature">
 							<div class="col-sm-4">
 								<%= image_tag creature.image.url(:thumb) %>
 							</div>
 							<div class="col-sm-8">
 								<h3><strong>Name: </strong><%= creature.name %></h3>
 								<p><strong>Description: </strong><%= creature.description %></p>
-								<%= button_to "Delete", creature, method: :delete, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
-								<%= button_to "Edit", edit_creature_path(creature), method: :get, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
+								<div class="button-wrapper">
+									<%= button_to "View", creature_path(creature), method: :get, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
+									<%= button_to "Edit", edit_creature_path(creature), method: :get, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
+									<%= button_to "Delete", creature, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
+								</div>
 							</div>
 						</div>
 						<hr>
