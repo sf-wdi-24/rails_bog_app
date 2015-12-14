@@ -13,4 +13,10 @@ class CreaturesController < ApplicationController
     render :index
   end
 
+  # show the new creature form
+   def new
+     render :new
+   end
+
+
 end

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   root "creatures#index"
   # use the resources method to have Rails make an index route for creatures
-  resources :creatures, only: [:index]
+  resources :creatures, only: [:index, :new]
   # resources :creatures, only: [:index] is equivalent to:
   # get "/creatures", to: "creatures#index"
+  # get "/creatures/new", to: "creatures#new"
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
