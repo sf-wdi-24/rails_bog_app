@@ -28,11 +28,12 @@ def create
   # create a new creature from `creature_params`
   creature = Creature.new(creature_params)
 
-  # if creature saves, redirect to route that displays all creatures
+  # if creature saves, redirect to route that displays      (Not all creatures!)
+  # ONLY the newly created creature
    if creature.save
-     redirect_to creatures_path
-      # redirect_to creatures_path is equivalent to:
-      # redirect_to "/creatures"
+     redirect_to creatures_path(creature)
+      # redirect_to creature_path(creature) is equivalent to:
+      # redirect_to "/creatures/#{creature.id}"
     end
   end
 
