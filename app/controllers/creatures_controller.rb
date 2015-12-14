@@ -50,4 +50,19 @@ def create
     render :show
   end
 
+   # show the edit creature form
+  def edit
+    # get the creature id from the url params
+    creature_id = params[:id]
+
+    # use `creature_id` to find the creature in the database
+    # and save it to an instance variable
+    @creature = Creature.find_by_id(creature_id)
+
+    # render the edit view (it has access to instance variable)
+    render :edit
+  end
+
+  
+
 end
