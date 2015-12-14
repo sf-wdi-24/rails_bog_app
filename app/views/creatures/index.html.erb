@@ -1,25 +1,16 @@
 <!-- app/views/creatures/index.html.erb -->
 <h1> List of creatures </h1>
-	<%= link_to 'Add a new creature', new_creature_path, class: 'btn btn-success btn-block' %>
+	<p><%= link_to 'Add a new creature', new_creature_path, class: 'btn btn-success btn-block' %></p>
 
-<table>
-	<thread>
-		<tr>
-			<th>Name: </th>
-			<th>Description: </th>
-			<th>Image: </th>
-			<th colspan="3"></th>
-		</tr>
-	</thread>
 
-<tbody>
+<div class="container">
 	<% @creatures.each do |creature| %>
-  <tr>
-    <td><%= creature.name %></td>
-    <td><%= creature.description %></td>
-    <td><%= image_tag creature.image.url(:thumb) %></td>
-    <td><%= link_to 'Show', creature, class: 'btn btn-sm btn-default' %></td>
-    <td><%= link_to 'Edit ', edit_creature_path(creature), class: 'btn btn-sm btn-default' %></td>
-    <td><%= link_to 'Delete', creature, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-default' %></td>
-  </tr>
+    <p><strong>Name: </strong><%= creature.name %></p>
+    <p><strong>Description: </strong><%= creature.description %></p>
+    <p><%= image_tag creature.image.url(:thumb) %></p>
+    <p><%= link_to 'Show', creature, class: 'btn btn-sm btn-default' %>
+    <%= link_to 'Edit ', edit_creature_path(creature), class: 'btn btn-sm btn-default' %>
+    <%= link_to 'Delete', creature, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-default' %></p>
+  </div>
+  <hr>
 <% end %>
