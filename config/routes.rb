@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "creatures#index"
 
-  resources :creatures, only: [:index]
+  resources :creatures, only: [:index, :new, :create]
+
+
 end
