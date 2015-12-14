@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "creatures#index"
   # use the resources method to have Rails make an index route for creatures
-  resources :creatures, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :creatures
 
   # resources :creatures, only: [:index, :new, :create, :show, :edit, :update, :destroy] is equivalent to:
   # get "/creatures", to: "creatures#index"
