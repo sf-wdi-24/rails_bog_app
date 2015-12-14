@@ -45,95 +45,31 @@
             <p align="center">A bog is a mire that accumulates peat, a deposit of dead plant material - such as mosses.</p>
             <img src="http://amytanathorn.com/wp-content/uploads/2014/11/moss-woods-sm.jpg" alt="forest moss">
         </header>
-
+    </div>
         <hr>
-
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3 align="center">Latest Bogs</h3>
-                <br>
-            </div>
-        </div>
-        <!-- /.row -->
 
         <!-- Page Features -->
-        <div class="row text-center">
+    <div align="center">
+        <h1>Latest Bogs</h1>
+             <br>
+            <table>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p align="right">Copyright &copy; The Bog App 2015</p>
-                </div>
-            </div>
-        </footer>
-
+             <!-- creatures is the parameters to go through the loop. Similar to for each loop in JS. The block is telling us to go through the list of creatures -->
+            <% @creatures.each do |creature| %>
+              <tr>
+                <td><%= creature.name %></td>
+                <td><%= creature.description %></td>
+                <td><%= image_tag creature.image.url(:medium) %></td>
+                <td><%= link_to "Show", creature %></td>
+                <td><%= link_to "Edit", edit_creature_path(creature) %></td>
+                <td><%= link_to "Remove", creature, method: :delete, data: { confirm: "Are you sure?" } %></td>
+              </tr>
+            <% end %>
+            </table>
+ 
+        <br>
+        <%= link_to "New", new_creature_path %>
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
