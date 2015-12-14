@@ -18,10 +18,15 @@
         <div class="menu simple">
           <ul>
             <li class="inline">
-              <%= link_to "Delete", creature_path(creature), method: :delete, class:"right button tiny warning" %>
+              <%= link_to creature_path(creature), method: :delete, class:"right button tiny warning delete"  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
             </li>
+            <li class="divider inline"></li>
             <li class="inline">
-              <%= link_to "Edit", edit_creature_path(creature), data:{:"reveal-id" => "editCreatureModal", :"reveal-ajax" => true}, class:"right button tiny warning" %>
+              <%= link_to edit_creature_path(creature), data:{:"reveal-id" => "editCreatureModal", :"reveal-ajax" => true}, class:"right button tiny warning edit" do%>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
             </li>
             <div id="editCreatureModal" class="reveal-modal" data-reveal>
               <%= render "partials/editCreature" %>

@@ -13,8 +13,10 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require font-awesome
  */
+@import 'font-awesome';
+
 $gray-color: #444;
 body {
   background-color: #E8E8E8 ;
@@ -110,4 +112,9 @@ background-position: center;
 height: 70vh;
 }
 
-
+a.right.button.delete:hover {
+  background-color: #FF0000;
+}
+a.button.edit:hover {
+  background-color: #57d7fd;
+}
