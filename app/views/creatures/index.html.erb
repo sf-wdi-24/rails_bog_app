@@ -1,6 +1,6 @@
 <!-- app/views/creatures/index.html.erb -->
 <h1> List of creatures </h1>
-	<%= link_to 'Add a new creature', new_creature_path %>
+	<%= link_to 'Add a new creature', new_creature_path, class: 'btn btn-success btn-block' %>
 
 <table>
 	<thread>
@@ -18,7 +18,8 @@
     <td><%= creature.name %></td>
     <td><%= creature.description %></td>
     <td><%= image_tag creature.image.url(:thumb) %></td>
-    <td><%= link_to 'Edit ', edit_creature_path(creature) %></td>
-    <td><%= link_to 'Delete', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', creature, class: 'btn btn-sm btn-default' %></td>
+    <td><%= link_to 'Edit ', edit_creature_path(creature), class: 'btn btn-sm btn-default' %></td>
+    <td><%= link_to 'Delete', creature, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-default' %></td>
   </tr>
 <% end %>

@@ -3,4 +3,6 @@
 <h3><%= @creature.name %></h3>
 <p><%= @creature.description %></p>
 <p><%= image_tag @creature.image.url(:medium) %></p>
-<%= button_to "Delete", @creature, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p><%= link_to 'Edit ', edit_creature_path, class: 'btn btn-sm btn-default' %></p>
+<%= button_to 'Delete', @creature, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-default' %>
+<p><%= link_to 'List of creatures', :root, class: 'btn btn-sm btn-default' %></p>
