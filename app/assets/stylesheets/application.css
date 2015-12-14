@@ -25,3 +25,11 @@ body {
 	margin: 20px;
 	padding: 5px;
 }
+
+.buttons {
+	color: #FF0000;
+}
+
+a {
+	color: #FFFFFF;
+}

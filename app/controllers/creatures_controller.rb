@@ -15,6 +15,7 @@ class CreaturesController < ApplicationController
 		creature_params = params.require(:creature).permit(:name, :description)
 
 		creature = Creature.new(creature_params)
+		creature.errors[:name] 
 
 		if creature.save
 			redirect_to creature_path(creature)

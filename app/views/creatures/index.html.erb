@@ -4,8 +4,9 @@
 		<% @creatures.each do |creature| %>
 		<div class="list">
 			<p>
-				<strong>Name: </strong><%= creature.name %> <br>
+				<strong>Name: <a href = "/creatures/<%= creature.id %>"></strong><%= creature.name %></a><br>
 				<strong>Description: </strong><%= creature.description %>
+
 			</p>	
 		</div>
 		<% end %>	
