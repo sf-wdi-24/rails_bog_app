@@ -1,7 +1,7 @@
-*= require bootsrap-3.3.6.min
 
-*= require_tree .
-*= require_self
+
+/**= require_tree .
+*= require_self*/
  
-@import "custom";
-*= require custom
+@import 'custom'
+
