@@ -3,5 +3,6 @@
 <%= form_for @creature do |f| %>
   <%= f.text_field :name %>
   <%= f.text_area :description %>
+  <%= f.file_field :image %>
   <%= f.submit "Save Creature" %>
 <% end %>

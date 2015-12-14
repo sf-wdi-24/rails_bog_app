@@ -1,8 +1,24 @@
 <!-- app/views/creatures/index.html.erb -->
+<h1> List of creatures </h1>
+	<%= link_to 'Add a new creature', new_creature_path %>
 
-<% @creatures.each do |creature| %>
-  <p>
-    <strong>Name:</strong> <%= creature.name %><br>
-    <strong>Description:</strong> <%= creature.description %>
-  </p>
+<table>
+	<thread>
+		<tr>
+			<th>Name: </th>
+			<th>Description: </th>
+			<th>Image: </th>
+			<th colspan="3"></th>
+		</tr>
+	</thread>
+
+<tbody>
+	<% @creatures.each do |creature| %>
+  <tr>
+    <td><%= creature.name %></td>
+    <td><%= creature.description %></td>
+    <td><%= image_tag creature.image.url(:thumb) %></td>
+    <td><%= link_to 'Edit ', edit_creature_path(creature) %></td>
+    <td><%= link_to 'Delete', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 <% end %>
