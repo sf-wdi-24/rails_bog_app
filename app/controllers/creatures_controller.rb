@@ -1,6 +1,6 @@
 class CreaturesController < ApplicationController
-  # before_filter :authorize
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, only: [:edit, :update, :destroy]
 
   def index
     @creatures = Creature.all.order(created_at: :desc)
@@ -10,7 +10,12 @@ class CreaturesController < ApplicationController
   end
 
   def new
-    @creature = Creature.new
+    if current_user
+      @creature = Creature.new
+    else
+      redirect_to '/login'
+      flash[:alert] = 'Login to create new creature'
+    end
   end
 
   def create
@@ -25,6 +30,12 @@ class CreaturesController < ApplicationController
   end
 
   def edit
+    if current_user.id != @creature.user.id
+      redirect_to root_path
+      flash[:alert] = 'This does not belong to you'
+    else
+      render :edit
+    end
   end
 
   def update
