@@ -17,6 +17,7 @@
       <div class="callout">
         <div class="menu simple">
           <ul>
+          <% if current_user && current_user.id == creature.user.id %>
             <li class="inline">
               <%= link_to creature_path(creature), method: :delete, class:"right button tiny warning delete"  do %>
               <i class="fa fa-trash"></i>
@@ -28,6 +29,8 @@
               <i class="fa fa-pencil-square-o"></i>
             <% end %>
             </li>
+ 
+          <% end %>
           </ul>   
         </div>
       </div>

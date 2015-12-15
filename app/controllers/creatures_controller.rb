@@ -15,6 +15,7 @@ class CreaturesController < ApplicationController
 
   def create
     @creature = Creature.new(creature_params)
+    @creature.user_id = current_user.id
     if @creature.save
       redirect_to root_path
       flash[:notice] = "New creature created"
@@ -47,7 +48,7 @@ private
   end
 
   def creature_params
-    params.require(:creature).permit(:name, :description,:avatar)
+    params.require(:creature).permit(:name, :description,:avatar, :user_id)
   end
 
 end
