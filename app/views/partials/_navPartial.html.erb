@@ -7,12 +7,26 @@
   <section class="top-bar-section">
     <ul class="right">
       <li class="divider"></li>
-      <li class="nav-li"><%= link_to "All Creatures", root_path %></li>
-      <li class="divider"></li>
-      <li><%= link_to new_creature_path, data: {:"reveal-id" => "newCreatureModal", :"reveal-ajax" => true}, class:"style-a" do %>
-        <i class="fa fa-plus"></i>
+      <% if current_user %>
+        <li class="inline">
+          <%= link_to current_user.name, root_path %>
+        </li>
+        <li class="divider"></li>
+        <li class="inline">
+          <%= link_to 'Logout', logout_path %>
+        </li>
+        <li class="divider"></li>
+        <li><%= link_to new_creature_path, data: {:"reveal-id" => "newCreatureModal", :"reveal-ajax" => true}, class:"style-a" do %>
+          <i class="fa fa-plus"></i>
+        <% end %>
+        </li>
+      <% else %>
+        <li class="inline">
+          <%= link_to 'Sign Up',signup_path %>
+        </li>
+        <li class="divider"></li>
+        <li class="inline"><%= link_to "Login", login_path %></li>
       <% end %>
-      </li>
     </ul>
   </section>
 </nav>

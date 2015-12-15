@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   def new
+    if current_user
+      redirect_to root_path
+      flash[:alert] = 'Logout to signup again..but why?'
+    end
   end
 
   def create
@@ -15,6 +19,6 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    params.requre(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

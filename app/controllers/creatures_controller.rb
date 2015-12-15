@@ -1,4 +1,5 @@
 class CreaturesController < ApplicationController
+  # before_filter :authorize
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
 
   def index
