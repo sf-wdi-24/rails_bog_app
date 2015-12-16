@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require motion-ui.js
 //= require foundation
 //= require turbolinks
 //= require_tree .
@@ -21,4 +22,9 @@ $(function(){ $(document).foundation();
 
   //flash message fade out after 3 secs
   $('#flashMsg').delay(3000).fadeOut('slow')
+
+  // $animate = $("#animate-this");
+  //   MotionUI.animateOut($animate, 'fade-out', function() {
+  //     console.log('Transition done!');
+  // });
 });

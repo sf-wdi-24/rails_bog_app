@@ -44,6 +44,7 @@ class CreaturesController < ApplicationController
       flash[:notice] = "Creature updated"
     else
       render :edit
+      flash[:alert] = "Something went wrong try again"
     end
   end
 
