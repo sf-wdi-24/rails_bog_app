@@ -97,8 +97,8 @@ Your routes tell your app how to direct **HTTP requests** to **controller action
 # config/routes.rb
 #
 
-RouteApp::Application.routes.draw do
-  root to: "creatures#index"
+Rails.application.routes.draw do
+  root "creatures#index"
 
   # use the resources method to have Rails make an index route for creatures
   resources :creatures, only: [:index]
@@ -368,7 +368,7 @@ Rails.application.routes.draw do
   # get "/creatures", to: "creatures#index"
   # get "/creatures/new", to: "creatures#new"
   # post "/creatures", to: "creatures#create"
-  # post "/creatures/:id", to: "creatures#show"
+  # get "/creatures/:id", to: "creatures#show"
 end
 ```
 
