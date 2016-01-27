@@ -41,3 +41,7 @@ h1 {
 a {
 	color: #4fabf7;
 }
+
+.error {
+	color: red;
+}

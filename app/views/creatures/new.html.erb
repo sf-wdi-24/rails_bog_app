@@ -12,7 +12,7 @@
 						<h3>Errors:</h3>
 						<ul>
 							<% @creature.errors.full_messages.each do |message| %>
-								<li><%= message %></li>
+								<li class="error"><%= message %></li>
 							<% end %>
 						</ul>
 					<% end %>

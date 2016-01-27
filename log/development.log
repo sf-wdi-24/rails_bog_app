@@ -16971,3 +16971,628 @@ Processing by CreaturesController#index as HTML
   [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
   Rendered creatures/index.html.erb within layouts/application (4.5ms)
 Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2015-12-13 20:39:04 -0800
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.0ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (110.2ms)
+
+
+Started GET "/creatures/25" for ::1 at 2015-12-13 20:39:48 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2015-12-13 20:39:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (111.0ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (60.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (131.1ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2015-12-13 20:41:29 -0800
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (109.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (41.6ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.2ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2015-12-13 20:42:48 -0800
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.min.css.map"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Trung/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.6ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Trung/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (109.7ms)
+
+
+Started GET "/creatures/25" for ::1 at 2015-12-13 20:43:35 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered creatures/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/assets/application.self-0d96d2efeb01779ab6fcae50caa9815629a491660533c67ac9b765d84a8ef1e5.css?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 20:43:35 -0800
+
+
+Started GET "/creatures/25/edit" for ::1 at 2015-12-13 20:43:44 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-13 20:43:46 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"PPX53v1BETE2KUc9FYDlEUW9UwFSliBEJj1EaQCz4ImS/kYP0SGU9Ulsx0uRnchlncJstdhhBkbTQMQq3OdNtg=="}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/25" for ::1 at 2015-12-13 20:43:49 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-13 20:43:52 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"FFC+zgEVUSWnnkXKpemqFgyrNYnJvaLmvn9Y7ZXyzTy6WwEfLXXU4djbxbwh9Idi1NQKPUNKhORLAtiuSaZgAw=="}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-13 20:44:15 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-13 20:44:26 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"cDuog3lyQAIvc/P0BUJj1SszNp1Q5AQUSe35APOZAtneMBdSVRLFxlA2c4KBX06h80wJKdoTIha8kHlDL82v5g=="}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-12-14 09:14:14 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.4ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 235ms (Views: 222.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/creatures/25" for ::1 at 2015-12-14 09:14:21 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/25/edit" for ::1 at 2015-12-14 09:14:24 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered creatures/edit.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 52ms (Views: 50.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 09:14:25 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"Ma759BqMWT8zrDS2Y0I8sh1eZTtM18ukQwCgYhxZYxafpUYlNuzc+0zptMDnXxHGxSFaj8Yg7aa2fSAhwA3OKQ=="}
+  [1m[36mCreature Load (0.3ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/26" for ::1 at 2015-12-14 09:14:29 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 26]]
+  Rendered creatures/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 09:14:31 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"bt+31c1ayrCisTOiQBBndwLElDhx6nGI/MUlSCayyWbA1AgE4TpPdN30s9TEDUoD2rurjPsdV4oJuKUL+uZkWQ=="}
+  [1m[36mCreature Load (0.4ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/creatures/26/edit" for ::1 at 2015-12-14 09:14:32 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 26]]
+  Rendered creatures/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 09:14:35 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"eZlJ53YLwwGBdc7BflS17r60oSI3CN43YRJoA6WqnCHXkvY2WmtGxf4wTrf6SZiaZsuelr3/+DWUb+hAef4xHg=="}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-14 09:14:38 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 51ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 09:14:41 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"tJ7D7d1m0fcl4v2A2+u7JAIvX56qsciC70l7+km3BN4alXw88QZUM1qnffZf9pZQ2lBgKiBG7oAaNPu5leOp4Q=="}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-14 09:15:20 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2015-12-14 09:15:22 -0800
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wXBx59BHdHE3a7WvIg0S2qp+0q2nFXiSx9H/sfcO9CNve842/CfxtUguNdmmED+ucgHtGS3iXpAyrH/yK1pZHA==", "creature"=>{"name"=>"", "description"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered creatures/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 09:15:25 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"/5k/vg4TPBABpMVkPFEaOhAiuIj40qL+W3oK6J5dk6RRkoBvInO51H7hRRK4TDdOyF2HPHIlhPyuB4qrQgk+mw=="}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-14 09:15:31 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2015-12-14 09:15:33 -0800
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CTOeUcpLBRCQojKbzVhbmWA5O/a0jidONzYQ36Fc1dunOCGA5iuA1O/nsu1JRXbtuEYEQj55AUzCS5CcfQh45A==", "creature"=>{"name"=>"", "description"=>""}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered creatures/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 09:15:38 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"bhyycKXLFlxb7/615ORNZOdwVjmqWrc+plGqefR98H7AFw2hiauTmCSqfsNg+WAQPw9pjSCtkTxTLCo6KCldQQ=="}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-12-14 10:41:06 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 298ms (Views: 285.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-2b43964720fc98dd5ff6952f24f4bdc72ed9e8fc254cf83afd0f6b8e404c9334.css?body=1" for ::1 at 2015-12-14 10:41:06 -0800
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-14 10:41:06 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-14 10:41:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-14 10:41:07 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 10:41:07 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-14 10:41:07 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-14 10:41:07 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 10:41:07 -0800
+
+
+Started GET "/creatures/new" for ::1 at 2015-12-14 10:41:08 -0800
+Processing by CreaturesController#new as HTML
+  Rendered creatures/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2015-12-14 10:41:10 -0800
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6UpOvUuWisc3ZwZhGUSuLPIB0PLJ9N/ZT0PcieUyUchHQfFsZ/YPA0gihhedWYNYKn7vRkMD+du6PlzKOWb89w==", "creature"=>{"name"=>"", "description"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered creatures/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 10:41:32 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"AKh8u0wrfWx+htd+8g/zVt3AAB5ZAh4V5G4g3vHPDtyuo8NqYEv4qAHDVwh2Et4iBb8/qtP1OBcRE6CdLZuj4w=="}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 49ms (Views: 48.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/26/edit" for ::1 at 2015-12-14 10:41:35 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mCreature Load (0.3ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 26]]
+  Rendered creatures/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/creatures/26" for ::1 at 2015-12-14 10:41:40 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2UnrCGwa8mfdh9T4j3BlHhP8TfP9e5SV6L63wUEI3ut3QlTZQHp3o6LCVI4LbUhqy4NyR3eMspcdwzeCnVxz1A==", "creature"=>{"name"=>"", "description"=>"Jabba the Hutt was one of the galaxy's most powerful gangsters, with far-reaching influence in both politics and the criminal underworld. Jabba was a major figure on Tatooine, where he controlled the bulk of the trafficking in illegal goods, piracy and slavery that generated most of the planet's wealth"}, "commit"=>"Edit", "id"=>"26"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 26]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered creatures/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 34.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 10:41:43 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"OJGz9kAO9DnbOFX691F0oLYfJZvdL3zUoie8ggZxzNmWmgwnbG5x/aR91YxzTFnUbmAaL1fYWtZXWjzB2iVh5g=="}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/25/edit" for ::1 at 2015-12-14 10:46:38 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/creatures/25" for ::1 at 2015-12-14 10:46:43 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4I6oilTcUNhMRvy6/SwL9YvegcBPTEcKqo/MvwOcvzZOhRdbeLzVHDMDfMx5MSaBU6G+dMW7YQhf8kz838gSCQ==", "creature"=>{"name"=>"Acklay", "description"=>""}, "commit"=>"Edit", "id"=>"25"}
+  [1m[35mCreature Load (0.1ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  Rendered creatures/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 49ms (Views: 43.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 10:46:47 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"rNVGog4TTknplHtORCqKB9Al4Z9qRwOzdb2qJdLxOuYC3vlzInPLjZbR+zjAN6dzCFreK+CwJbGAwCpmDqWX2Q=="}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 10:47:57 -0800
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/assets/application.self-1c1d58e23aff2b98c3356a79874bcd29e8cd073efab75f0a2438642301a05ec4.css?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-14 10:47:57 -0800
+
+
+Started GET "/creatures/25/edit" for ::1 at 2015-12-14 10:47:58 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/creatures/25" for ::1 at 2015-12-14 10:48:02 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xXLe0cXGKn3Di5z0WVFrRl1mKYe1rxumX6rj/AErG+9reWEA6aavubzOHILdTEYyhRkWMz9YPaSq12O/3X+20A==", "creature"=>{"name"=>"", "description"=>"A huge, snarling, crab-like thing, the acklay has six claws, sharp fangs, and a tough skin/outer shell. Its relentless pursuit of Obi-Wan Kenobi in the Geonosian arena makes it appear meaner, and of all the monsters in the prequels, it seems to have the most personality."}, "commit"=>"Edit", "id"=>"25"}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered creatures/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 43ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures" for ::1 at 2015-12-14 10:48:03 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"7kZFqysCn9QKL5SK5DwmjKcgl6uN61rVigrxK3HyloZATfp6B2IaEHVqFPxgIQv4f1+oHwccfNd/d3ForaY7uQ=="}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC[0m
+  Rendered creatures/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-27 05:29:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreaturesController#index as HTML
+  [1m[35mCreature Load (0.5ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 337ms (Views: 324.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap-3.3.6.min.self-66fe84b79c6d5db31355296a8c9627d232721fe3ac3c31f3554ccc7e999279b6.css?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/assets/application.self-1c1d58e23aff2b98c3356a79874bcd29e8cd073efab75f0a2438642301a05ec4.css?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/assets/creatures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/assets/creatures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-27 05:29:12 -0800
+
+
+Started GET "/creatures/25" for ::1 at 2016-01-27 05:29:28 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.2ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 43ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/25/edit" for ::1 at 2016-01-27 05:29:29 -0800
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mCreature Load (0.3ms)[0m  SELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered creatures/edit.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/creatures/25" for ::1 at 2016-01-27 05:29:55 -0800
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gQXxanS6AKaZf8eyrp7lb6/UoJvSUODzZ9oTJrOaaYhJ2WVtODzCvJLvXrhvKqjFtWopPsrEtvMQVbebUZkWIA==", "creature"=>{"name"=>"Acklay", "description"=>"A huge, snarling, crab-like thing, the acklay has six claws, sharp fangs, and a tough skin/outer shell. Its relentless pursuit of Obi-Wan Kenobi in the Geonosian arena makes it appear meaner, and of all the monsters in the prequels, it seems to have the most personality..."}, "commit"=>"Edit", "id"=>"25"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "creatures" SET "description" = ?, "updated_at" = ? WHERE "creatures"."id" = ?[0m  [["description", "A huge, snarling, crab-like thing, the acklay has six claws, sharp fangs, and a tough skin/outer shell. Its relentless pursuit of Obi-Wan Kenobi in the Geonosian arena makes it appear meaner, and of all the monsters in the prequels, it seems to have the most personality..."], ["updated_at", "2016-01-27 13:29:55.471559"], ["id", 25]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/creatures/25
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/creatures/25" for ::1 at 2016-01-27 05:29:55 -0800
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mCreature Load (0.1ms)[0m  [1mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered creatures/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/creatures" for ::1 at 2016-01-27 05:30:00 -0800
+Processing by CreaturesController#index as HTML
+  Parameters: {"authenticity_token"=>"ZuLyjcnwXVcJCey+jDByuR9WVs1BWe3xFyz3feRLAsiuPmaKhXafTQKZdbRNhD8TBejfaFnNu/Fgo1PABkh9YA=="}
+  [1m[35mCreature Load (0.2ms)[0m  SELECT "creatures".* FROM "creatures"  ORDER BY "creatures"."name" ASC
+  Rendered creatures/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.2ms)
