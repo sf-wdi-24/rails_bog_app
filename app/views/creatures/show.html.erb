@@ -1,0 +1,7 @@
+<h1>Show creature</h1>
+
+<%= image_tag @creature.image.url(:thumb) %>
+
+<h3><%= @creature.name %></h3>
+<p><%= @creature.description %></p>
+<%= button_to "Delete", @creature, method: :delete %>
