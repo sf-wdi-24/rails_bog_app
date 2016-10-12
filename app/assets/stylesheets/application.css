@@ -1,0 +1,11 @@
+/* *= require bootstrap-3.3.6.min
+ *= require_tree .
+ *= require_self
+ */
+ /*cellpadding*/
+th, td { padding: 10px; }
+
+/*cellspacing*/
+table { border-collapse: separate; border-spacing: 20px; } // cellspacing="5"
+table { border-collapse: collapse; border-spacing: 0; }   // cellspacing="0"
+
