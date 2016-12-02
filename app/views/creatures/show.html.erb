@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<h1 class="text-center">Creature Profile</h1>
+			<hr>
+			<div class="row">
+				<%= link_to "Back to List", creatures_path, method: :get, class: "pull-right", style: "margin-bottom: 10px" %>
+			</div>
+			<div class="row each-creature">
+				<div class="col-sm-4">
+					<%= image_tag @creature.image.url(:thumb) %>
+				</div>
+				<div class="col-sm-8">
+					<h3><strong>Name: </strong><%= @creature.name %></h3>
+					<p><strong>Description: </strong><%= @creature.description %></p>
+					<div class="button-wrapper">
+						<%= button_to "Edit", edit_creature_path(@creature), method: :get, class: "btn btn-info pull-left", style: "margin-right: 10px" %>
+						<%= button_to "Delete", @creature, method: :delete, class: "btn btn-info pull-left" %>
+					</div>
+				</div>
+				<hr>
+			</div>
+			<br>
+		</div>
+	</div>
+</div>

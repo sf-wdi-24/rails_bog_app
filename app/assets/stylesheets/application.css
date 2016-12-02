@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap-3.3.6.min
+ *= require_tree .
+ *= require_self
+ */
+body {
+	height: 100%;
+	width: 100%;
+	background: url("http://i.imgur.com/WdJLMuJ.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+
+h1, h3, p, .button-wrapper, img, a {
+ 	padding-left: 10px;
+ 	padding-right: 10px;
+}
+
+h1 {
+	color: white;
+}
+
+.each-creature {
+	background-color: white;
+	padding: 10px;
+}
+
+a {
+	color: #4fabf7;
+}
+
+.error {
+	color: red;
+}
