@@ -1,0 +1,6 @@
+<h1>Display Creature</h1>
+<hr>
+<h3><strong><%= @creature.name %></h3></strong>
+<h3><%= @creature.description %></h3>
+<%= link_to "Edit", edit_creature_path(@creature), class: "btn btn-info" %>
+<%= button_to "Delete", @creature, method: :delete, class: "btn btn-danger" %>
