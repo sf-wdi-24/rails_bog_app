@@ -1,0 +1,28 @@
+<div class ="text-center">
+	<h1>Creatures</h1>
+	<hr>
+	<%= link_to "Create New Creature", '/creatures/new', class: "btn btn-success btn-md" %>
+	<br><br />
+</div>
+
+<table class="table table-striped">
+	<tr>
+		<th>Creature Name</th>
+		<th>Create Description</th>
+		<th>Creature Image</th>
+		<th>Creature Details</th>
+		<th>Edit Creature</th>
+		<th>Delete</th>	
+	</tr>
+	<% @creatures.each do |creature| %>
+	 <tr>
+		<td><%= creature.name.capitalize %></td>
+		<td><%= creature.description %></td>
+		<td><%= image_tag creature.image(:thumb) %></td>
+	 	<td><%= link_to "Show Details", creature, class: "btn-sm btn-primary"%></td>
+	 	<td><%= link_to "Edit", edit_creature_path(creature), class: "btn-sm btn-primary"%></td>
+	 	<td><%= link_to "Delete", creature, method: :delete , class: "btn-sm btn-danger", data: {confirm: "Are you sure you want to delete creature?"}%></td>
+	 </tr>
+	<% end %>
+</table>
+

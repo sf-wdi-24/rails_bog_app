@@ -1,0 +1,19 @@
+<div class= "row">
+	<div class="col-md-4 col-md-offset-4">
+		<h1 class = "text-center">New Creature</h1>
+		<hr>
+		<%= form_for @creature, html: { multipart: true } do |f| %>
+			<div class ="form-group">
+		  		<%= f.text_field :name , class: "form-control", placeholder: "name"%>
+		  	</div>
+		  	<div class ="form-group">
+		  		<%= f.text_area :description, class: "form-control", placeholder: "description" %>
+		  	</div>
+		  	<div class="form-group">
+				<%= f.label :image%>
+		  		<%= f.file_field :image%>
+		  	</div>
+		  <%= f.submit "Save Creature", class: "btn btn-block btn-success" %>
+		<% end %>
+	</div>	
+</div>
