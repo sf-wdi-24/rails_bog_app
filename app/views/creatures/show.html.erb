@@ -1,0 +1,23 @@
+<%= render 'partials/navPartial' %>
+<%= render 'partials/flashMsg' %>
+
+<div class="callout large primary">
+  <div class="column text-center">
+    <h1 class="show-after"><%= @creature.name %></h1>
+  </div>
+    <div class=" row medium-8 large-7">
+      <div class="blog-post">
+        <%= image_tag @creature.avatar_url(:thumb).to_s, class:"show-img" %> <br>
+        <h4 class="subheader text-center"><%= @creature.description %></h4>
+      </div>
+      <div class="callout">
+        <div class="menu simple">
+          <ul>
+            <li class="inline">
+              <%= link_to "Back", creatures_path, class:"show-back button tiny warning back" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+ <%= render 'partials/flashMsg' %>
+
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+
+    <%= form_tag '/login' do |f| %>
+      <div class="row column">
+        <h3 class="text-center">Login</h3>
+        Email: <%= text_field_tag :email %>
+        Password: <%= password_field_tag :password %>
+        <%= submit_tag "Submit", class:"button expanded small submit" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

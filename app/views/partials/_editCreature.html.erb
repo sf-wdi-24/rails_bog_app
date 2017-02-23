@@ -1,0 +1,17 @@
+<div class="">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+
+    <%= form_for :creature, url: creatures_path(@creature), method: :patch do |f| %>
+      <div class=" column">
+        <h3 class="text-center">Edit the creature</h3>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder:"Ex: MonkeySmash" %>
+        <%= f.label :description %>
+        <%= f.text_area :description, placeholder:"Smashes everything around" %>
+        <%= f.file_field :avatar %>
+        <%= f.submit "Update", class:"button expanded small submit" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

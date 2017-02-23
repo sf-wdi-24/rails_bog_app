@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require motion-ui.css
+ *= require foundation_and_overrides
+ *= require font-awesome
+ */
+@import 'font-awesome';
+
+$gray-color: #444;
+body {
+  background-color: #E8E8E8 ;
+}
+h1, 
+h2,
+h3,
+h4, 
+li,
+.button,
+ul.right,
+a, {
+  font-family: 'Unica One', cursive !important;
+}
+p,
+form {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+img.show-img {
+  display: block;
+}
+
+li.inline {
+  display: block;
+  margin: 0 auto;
+  list-style: none;
+}
+p.description {
+  padding: 20px;
+}
+.photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.photo img {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transform: scale(1.15);
+  transition: transform 0.5s, opacity 0.5s;
+}
+.photo img:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+a {
+  transition: color 0.5s ease;
+}
+a:hover {
+  color: red !important;
+}
+
+.button:hover {
+  color: white !important;
+}
+h3 a {
+  color: $gray-color;
+}
+h2:after,
+h1.show-after:after {
+  display: block;
+  height: 2px;
+  background-color: $gray-color;
+  content: ' ';
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+}
+h1.show-after {
+  font-size: 50px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+}
+
+img.show-after {
+  margin-bottom: 15px;
+}
+
+div#editCreatureModal,
+div#newCreatureModal {
+background-image: url("https://images.unsplash.com/7/hills.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=ba237149713396b2f3d4b3d6a22ca21b");
+background-size: cover;
+background-position: center;
+height: 70vh;
+}
+
+a.right.button.delete:hover {
+  background-color: #FF0000;
+}
+a.button.edit:hover {
+  background-color: #57d7fd;
+}
+a.button.back:hover {
+  background-color: #FFA500;
+}
+input.button.submit {
+  background-color: #57d7fd;
+}
+a.style-a:hover {
+  color: #57d7fd !important ;
+}

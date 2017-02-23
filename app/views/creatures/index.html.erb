@@ -1,0 +1,43 @@
+<%= render 'partials/navPartial' %>
+<%= render 'partials/flashMsg' %>
+
+<div class="callout large primary">
+  <div class="column text-center" id="animate-this">
+    <h1>Scary Creatures</h1>
+    <h2 class="subheader">So scary</h2>
+  </div>
+  <% @creatures.each do |creature| %>
+  <div class=" row medium-8 large-7">
+    <div class="blog-post">
+      <h3><%= link_to creature.name, creature_path(creature) %></h3>
+      <figure class="photo">
+        <%= image_tag creature.avatar_url(:thumb).to_s %>
+      </figure>
+      <p class="description"><%= creature.description %></p>
+      <div class="callout">
+        <div class="menu simple">
+          <ul>
+          <% if current_user && current_user.id == creature.user.id %>
+            <li class="inline">
+              <%= link_to creature_path(creature), method: :delete, class:"right button tiny warning delete"  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+            </li>
+            <li class="divider inline"></li>
+            <li class="inline">
+              <%= link_to edit_creature_path(creature), data:{:"reveal-id" => "editCreatureModal", :"reveal-ajax" => true}, class:"right button tiny warning edit" do%>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %>
+            </li>
+          <% end %>
+          </ul>   
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div id="editCreatureModal" class="reveal-modal" data-reveal>
+  <%= render "partials/editCreature" %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

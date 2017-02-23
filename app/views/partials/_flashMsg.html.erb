@@ -1,0 +1,7 @@
+<% if flash[:notice] %>
+  <div class='alert-box success radius text-center' id='flashMsg'><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:alert] %>
+    <div class='alert-box alert radius text-center' id='flashMsg'><%= flash[:alert] %></div>
+<% end %>
